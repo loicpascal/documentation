@@ -1055,56 +1055,204 @@ body .markdown-body
 .codehilite .vi{color:teal}
 .codehilite .il{color:#009999}
 .codehilite .gc{color:#999;background-color:#EAF2F5}
-</style><title>commandes</title></head><body><article class="markdown-body"><h1 id="commandes-git">Commandes Git<a class="headerlink" href="#commandes-git" title="Permanent link"></a></h1>
-<h2 id="commencement">Commencement<a class="headerlink" href="#commencement" title="Permanent link"></a></h2>
-<h3 id="initialiser-un-nouveau-depot">Initialiser un nouveau dépôt<a class="headerlink" href="#initialiser-un-nouveau-depot" title="Permanent link"></a></h3>
-<div class="codehilite"><pre>git init
-</pre></div>
-
-<h3 id="initialiser-un-nouveau-depot_1">Initialiser un nouveau dépôt<a class="headerlink" href="#initialiser-un-nouveau-depot_1" title="Permanent link"></a></h3>
-<div class="codehilite"><pre>git init
-</pre></div>
-
-<h2 id="configuration">Configuration<a class="headerlink" href="#configuration" title="Permanent link"></a></h2>
+</style><title>commandes</title></head><body><article class="markdown-body"><p><a href="https://facelessuser.github.io/MarkdownPreview/usage/" title="MarkdownPreview">MarkdownPreview</a><br />
+<a href="https://fr.wikipedia.org/wiki/Markdown#Quelques_exemples" title="Markdown">Markdown</a></p>
+<h1 id="commandes-git">Commandes Git<a class="headerlink" href="#commandes-git" title="Permanent link"></a></h1>
+<p><strong>Sommaire</strong></p>
+<ul>
+<li><a href="#gerer-un-depot">Gérer un dépôt</a><ul>
+<li><a href="#aide-en-ligne-de-commande">Aide en ligne de commande</a></li>
+<li><a href="#initialiser-un-nouveau-depot">Initialiser un nouveau dépôt</a></li>
+<li><a href="#cloner-un-depot">Cloner un dépôt</a></li>
+<li><a href="#configurer-un-depot">Configurer un dépôt</a></li>
+</ul>
+</li>
+<li><a href="#enregistrer-des-changements">Enregistrer des changements</a><ul>
+<li><a href="#git-add">git add</a></li>
+<li><a href="#git-commit">git commit</a></li>
+<li><a href="#git-diff">git diff</a></li>
+<li><a href="#git-stash">git stash</a></li>
+<li><a href="#gitignore">.gitignore</a></li>
+</ul>
+</li>
+<li><a href="#inspecter-un-depot">Inspecter un dépôt</a><ul>
+<li><a href="#git-status">git status</a></li>
+<li><a href="#git-log">git log</a></li>
+<li><a href="#git-blame">git blame</a></li>
+<li><a href="#git-show">git show</a></li>
+</ul>
+</li>
+<li><a href="#annuler-des-changements">Annuler des changements</a><ul>
+<li><a href="#git-reset">git reset</a></li>
+<li><a href="#git-checkout">git checkout</a></li>
+</ul>
+</li>
+<li><a href="#reecrire-lhistorique">Réécrire l&rsquo;historique</a><ul>
+<li><a href="#git-commit_1">git commit</a></li>
+</ul>
+</li>
+<li><a href="#gestion-des-branches">Gestion des branches</a><ul>
+<li><a href="#creer-une-nouvelle-branche">Créer une nouvelle branche</a></li>
+<li><a href="#pousser-une-nouvelle-branche-sur-le-serveur">Pousser une nouvelle branche sur le serveur</a></li>
+<li><a href="#changer-de-branche">Changer de branche</a></li>
+<li><a href="#mettre-a-jour-la-branche">Mettre à jour la branche</a></li>
+<li><a href="#lister-les-branches">Lister les branches</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="gerer-un-depot">Gérer un dépôt<a class="headerlink" href="#gerer-un-depot" title="Permanent link"></a></h2>
 <h3 id="aide-en-ligne-de-commande">Aide en ligne de commande<a class="headerlink" href="#aide-en-ligne-de-commande" title="Permanent link"></a></h3>
 <div class="codehilite"><pre>git help [nom_de_la_commande]
 </pre></div>
 
-<h3 id="lister-les-configs-globales">Lister les configs globales<a class="headerlink" href="#lister-les-configs-globales" title="Permanent link"></a></h3>
+<h3 id="initialiser-un-nouveau-depot">Initialiser un nouveau dépôt<a class="headerlink" href="#initialiser-un-nouveau-depot" title="Permanent link"></a></h3>
+<div class="codehilite"><pre>git init
+</pre></div>
+
+<h3 id="cloner-un-depot">Cloner un dépôt<a class="headerlink" href="#cloner-un-depot" title="Permanent link"></a></h3>
+<div class="codehilite"><pre>git clone &lt;repo_url&gt;
+</pre></div>
+
+<h3 id="configurer-un-depot">Configurer un dépôt<a class="headerlink" href="#configurer-un-depot" title="Permanent link"></a></h3>
+<p><strong>Configurer son mail</strong>
+<div class="codehilite"><pre>git config --global user.email &quot;your_email@example.com&quot;
+</pre></div>
+<strong>Configurer son éditeur de texte</strong>
+<div class="codehilite"><pre>git config --global core.editor &quot;vim&quot;
+</pre></div>
+<strong>Configurer ses alias</strong>
+<div class="codehilite"><pre>git config --global alias.co checkout
+git config --global alias.br branch
+git config --global alias.ci commit
+git config --global alias.st status
+</pre></div>
+<strong>Lister les config globales</strong>
 <div class="codehilite"><pre>git config --list
+</pre></div></p>
+<p><br/><br/></p>
+<h2 id="enregistrer-des-changements">Enregistrer des changements<a class="headerlink" href="#enregistrer-des-changements" title="Permanent link"></a></h2>
+<h3 id="git-add">git add<a class="headerlink" href="#git-add" title="Permanent link"></a></h3>
+<p><strong>Ajouter un fichier à l&rsquo;index</strong>
+<div class="codehilite"><pre>git add &lt;file&gt;
+</pre></div></p>
+<p><strong>Ajouter un répertoire à l&rsquo;index</strong>
+<div class="codehilite"><pre>git add &lt;directory&gt;
+</pre></div></p>
+<p><strong>Ajouter tous les fichiers à l&rsquo;index</strong>
+<div class="codehilite"><pre>git add .
+</pre></div></p>
+<p><br/></p>
+<h3 id="git-commit">git commit<a class="headerlink" href="#git-commit" title="Permanent link"></a></h3>
+<p><strong>Faire un commit avec un message</strong>
+<div class="codehilite"><pre>git commit -m &quot;commit message&quot;
+</pre></div></p>
+<p><strong>Ajouter tous les fichiers déjà trackés et fais un commit avec un message</strong>
+<div class="codehilite"><pre>git commit -am &quot;commit message&quot;
+</pre></div></p>
+<p><strong>Modifier le message du dernier commit</strong>
+<div class="codehilite"><pre>git commit --amend
+</pre></div></p>
+<p><br/></p>
+<h3 id="git-diff">git diff<a class="headerlink" href="#git-diff" title="Permanent link"></a></h3>
+<p><strong>Voir les différences entre le contenu du répertoire de travail et celui de l&rsquo;index</strong>
+<div class="codehilite"><pre>git diff
+</pre></div></p>
+<p><strong>Voir les différences entre le contenu de l&rsquo;index et celui du dernier commit</strong>
+<div class="codehilite"><pre>git diff --cached
+</pre></div></p>
+<p><strong>Voir les différences entre deux commits</strong>
+<div class="codehilite"><pre>git diff &lt;commit_1&gt; &lt;commit_2&gt;
+</pre></div></p>
+<p><br/></p>
+<h3 id="git-stash">git stash<a class="headerlink" href="#git-stash" title="Permanent link"></a></h3>
+<p><strong>Mettre les changements de côté</strong>
+<div class="codehilite"><pre>git stash
+git stash -u                            # Inclue les fichiers untracked
+git stash save &quot;WIP &lt;message&gt;&quot;          # Avec un message
+</pre></div></p>
+<p><strong>Lister les stashs enregistrés</strong>
+<div class="codehilite"><pre>git stash list
+</pre></div></p>
+<p><strong>Réintégrer le dernier stash dans le répertoire de travail et dans l&rsquo;index</strong>
+<div class="codehilite"><pre>git stash apply
+git stash pop                           # Et supprime le stash
+git stash apply|pop stash@{0}           # Un stash en particulier
+</pre></div></p>
+<p><strong>Visualiser le contenu d&rsquo;un stash</strong>
+<div class="codehilite"><pre>git stash show stash@{0}
+</pre></div></p>
+<p><strong>Supprimer les stashs</strong>
+<div class="codehilite"><pre>git stash clear
+git stash drop stash@{0}                # Un stash en particulier
+</pre></div></p>
+<p><br/></p>
+<h3 id="gitignore">.gitignore<a class="headerlink" href="#gitignore" title="Permanent link"></a></h3>
+<p><a href="https://www.atlassian.com/fr/git/tutorials/saving-changes/gitignore" title=".gitignore">.gitignore</a></p>
+<p><br/><br/></p>
+<h2 id="inspecter-un-depot">Inspecter un dépôt<a class="headerlink" href="#inspecter-un-depot" title="Permanent link"></a></h2>
+<h3 id="git-status">git status<a class="headerlink" href="#git-status" title="Permanent link"></a></h3>
+<p><strong>Afficher l&rsquo;état des fichiers</strong>
+<div class="codehilite"><pre>git status
+</pre></div></p>
+<p><br/></p>
+<h3 id="git-log">git log<a class="headerlink" href="#git-log" title="Permanent link"></a></h3>
+<p><strong>Afficher la liste des commits</strong>
+<div class="codehilite"><pre>git logs                                # Tous les commits
+git logs -3                             # Les 3 derniers commits
+git logs --oneline                      # Chaque commit sur une seule ligne
+git logs --stat                         # Pour chaque commit quels fichiers ont été modifiés
+git logs -p                             # Les différences pour chaque fichier
+git log --author=&quot;&lt;pattern&gt;&quot;            # Pour une personne en particulier
+git log --grep=&quot;&lt;pattern&gt;&quot;              # Selon leur message
+git log &lt;file&gt;                          # Pour un fichier en particulier
+git log --graph --decorate --oneline    # Sous forme de graph
+</pre></div></p>
+<p><br/></p>
+<h3 id="git-blame">git blame<a class="headerlink" href="#git-blame" title="Permanent link"></a></h3>
+<p><strong>Afficher qui a modifié quoi</strong>
+<div class="codehilite"><pre>git blame &lt;fichier&gt;
+git blame -L 1,5 README.md              # Restreindre sur un ensemble de lignes
+</pre></div></p>
+<p><br/></p>
+<h3 id="git-show">git show<a class="headerlink" href="#git-show" title="Permanent link"></a></h3>
+<p><strong>Voir le contenu exact d&rsquo;un commit</strong></p>
+<div class="codehilite"><pre>git show &lt;commit&gt;
+</pre></div>
+
+<p><strong>Voir le contenu exact d&rsquo;un commit pour un fichier donné</strong></p>
+<div class="codehilite"><pre>git show &lt;commit&gt; &lt;nom_du_fichier&gt;
 </pre></div>
 
 <p><br/><br/></p>
-<h2 id="git-commit">git commit<a class="headerlink" href="#git-commit" title="Permanent link"></a></h2>
-<p><strong>Modifier le message du dernier commit</strong></p>
-<div class="codehilite"><pre>git commit --amend
-</pre></div>
-
-<p><strong>Annuler le dernier commit</strong> (revient à revenir à l&rsquo;avant-dernier commit)</p>
-<div class="codehilite"><pre>git reset HEAD^
-</pre></div>
-
-<p><strong>Revenir à l&rsquo;avant-avant-dernier commit</strong></p>
+<h2 id="annuler-des-changements">Annuler des changements<a class="headerlink" href="#annuler-des-changements" title="Permanent link"></a></h2>
+<h3 id="git-reset">git reset<a class="headerlink" href="#git-reset" title="Permanent link"></a></h3>
+<p><strong>Annuler le dernier commit</strong>
+<div class="codehilite"><pre>git reset HEAD^                         # Revient à revenir à l&#39;avant-dernier commit
+</pre></div></p>
+<p><strong>Revenir à l&rsquo;avant-avant-dernier commit</strong>
 <div class="codehilite"><pre>git reset HEAD^^
 
 OU
 
 git reset HEAD~2
-</pre></div>
-
-<p><strong>Revenir à un commit précis</strong></p>
+</pre></div></p>
+<p><strong>Revenir à un commit précis</strong>
 <div class="codehilite"><pre>git reset d6d9892
-</pre></div>
-
+</pre></div></p>
 <p>Avec un <code>reset HEAD</code>, seuls les commit sont supprimés. Les modifications elles, restent en place.</p>
-<p><strong>Annuler tous les changements du dernier commit</strong></p>
+<p><strong>Annuler tous les changements du dernier commit</strong>
 <div class="codehilite"><pre>git reset --hard HEAD^
-</pre></div>
-
-<p><strong>Annuler les modifications d&rsquo;un fichier avant un commit</strong></p>
+</pre></div></p>
+<h3 id="git-checkout">git checkout<a class="headerlink" href="#git-checkout" title="Permanent link"></a></h3>
+<p><strong>Annuler les modifications d&rsquo;un fichier avant un commit</strong>
 <div class="codehilite"><pre>git checkout nom_fichier
-</pre></div>
-
+</pre></div></p>
+<p><br/><br/></p>
+<h2 id="reecrire-lhistorique">Réécrire l&rsquo;historique<a class="headerlink" href="#reecrire-lhistorique" title="Permanent link"></a></h2>
+<h3 id="git-commit_1">git commit<a class="headerlink" href="#git-commit_1" title="Permanent link"></a></h3>
+<p><strong>Changer le dernier commit</strong>
+<div class="codehilite"><pre>git commit --amend -m &quot;mon nouveau message&quot;
+</pre></div></p>
 <p><br/><br/></p>
 <h2 id="gestion-des-branches">Gestion des branches<a class="headerlink" href="#gestion-des-branches" title="Permanent link"></a></h2>
 <h3 id="creer-une-nouvelle-branche">Créer une nouvelle branche<a class="headerlink" href="#creer-une-nouvelle-branche" title="Permanent link"></a></h3>
@@ -1142,28 +1290,4 @@ Alias de <code>git fetch -p &amp;&amp; LANG=en_US git branch -vv --merged | awk 
 <h3 id="forcer-la-suppression-de-toutes-les-branches-de-suivi-locales-qui-ont-ete-supprimees-sur-le-distant">Forcer la suppression de toutes les branches de suivi locales qui ont été supprimées sur le distant<a class="headerlink" href="#forcer-la-suppression-de-toutes-les-branches-de-suivi-locales-qui-ont-ete-supprimees-sur-le-distant" title="Permanent link"></a></h3>
 <p><div class="codehilite"><pre>git branch-cleanup-force
 </pre></div>
-Alias de <code>git fetch -p &amp;&amp; LANG=en_US git branch -vv | awk '/: gone]/{print $1}' | xargs -rn 1 git branch -D</code></p>
-<p><br/><br/></p>
-<h2 id="exploration">Exploration<a class="headerlink" href="#exploration" title="Permanent link"></a></h2>
-<h3 id="git-log">git log<a class="headerlink" href="#git-log" title="Permanent link"></a></h3>
-<p><strong>Affiche les logs des commit de la branche courante</strong></p>
-<div class="codehilite"><pre>git log
-</pre></div>
-
-<p><strong>Affiche les logs des commit de la branche courante pour un fichier donné</strong></p>
-<div class="codehilite"><pre>git log &lt;nom_du_fichier&gt;
-</pre></div>
-
-<h3 id="git-blame">git blame<a class="headerlink" href="#git-blame" title="Permanent link"></a></h3>
-<p><strong>Affiche quel commit et qui a modifié chaque ligne du fichier</strong></p>
-<div class="codehilite"><pre>git blame &lt;nom_du_fichier&gt;
-</pre></div>
-
-<h3 id="git-show">git show<a class="headerlink" href="#git-show" title="Permanent link"></a></h3>
-<p><strong>Voir le contenu exact d&rsquo;un commit</strong></p>
-<div class="codehilite"><pre>git show &lt;commit&gt;
-</pre></div>
-
-<p><strong>Voir le contenu exact d&rsquo;un commit pour un fichier donné</strong></p>
-<div class="codehilite"><pre>git show &lt;commit&gt; &lt;nom_du_fichier&gt;
-</pre></div></article></body></html>
+Alias de <code>git fetch -p &amp;&amp; LANG=en_US git branch -vv | awk '/: gone]/{print $1}' | xargs -rn 1 git branch -D</code></p></article></body></html>
