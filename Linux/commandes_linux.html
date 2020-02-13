@@ -1071,14 +1071,24 @@ body .markdown-body
 <div class="codehilite"><pre>man &lt;commande&gt;
 </pre></div>
 
+<h3 id="afficher-lhistorique-des-commandes-lancees">Afficher l&rsquo;historique des commandes lancées<a class="headerlink" href="#afficher-lhistorique-des-commandes-lancees" title="Permanent link"></a></h3>
+<div class="codehilite"><pre>history
+history 20                          # Afficher les 20 dernières commandes
+history | grep -i &lt;search&gt; | less   # Afficher les 10 dernières commandes filtrées sur un mot clé
+</pre></div>
+
+<h3 id="recherche-dans-lhistorique">Recherche dans l&rsquo;historique<a class="headerlink" href="#recherche-dans-lhistorique" title="Permanent link"></a></h3>
+<div class="codehilite"><pre>Ctrl + R
+</pre></div>
+
 <h3 id="afficher-le-repertoire-courant">Afficher le répertoire courant<a class="headerlink" href="#afficher-le-repertoire-courant" title="Permanent link"></a></h3>
 <div class="codehilite"><pre>pwd
 </pre></div>
 
 <h3 id="afficher-le-repertoire-courant_1">Afficher le répertoire courant<a class="headerlink" href="#afficher-le-repertoire-courant_1" title="Permanent link"></a></h3>
 <div class="codehilite"><pre>ls
-ls -l       Afficher les détails pour chaque fichier
-ls -a       Afficher les fichiers cachés
+ls -l       # Afficher les détails pour chaque fichier
+ls -a       # Afficher les fichiers cachés
 </pre></div>
 
 <h3 id="changer-de-repertoire">Changer de répertoire<a class="headerlink" href="#changer-de-repertoire" title="Permanent link"></a></h3>
@@ -1110,7 +1120,10 @@ ls -a       Afficher les fichiers cachés
 </pre></div>
 
 <h3 id="afficher-le-contenu-dun-fichier">Afficher le contenu d&rsquo;un fichier<a class="headerlink" href="#afficher-le-contenu-dun-fichier" title="Permanent link"></a></h3>
-<div class="codehilite"><pre>cat &lt;filename&gt;
+<div class="codehilite"><pre>cat &lt;filename&gt;          # Affiche tout le fichier
+tail &lt;filename&gt;         # Affiche les 10 dernières lignes d&#39;un fichier
+tail -20 &lt;filename&gt;     # Affiche les 20 dernières lignes d&#39;un fichier
+tail -f &lt;filename&gt;      # Affiche les 10 dernières lignes d&#39;un fichier puis les lignes suivantes automatiquement lorsque le fichier est modifié
 </pre></div>
 
 <h3 id="enregistrer-la-sortie-dune-commande-dans-un-fichier">Enregistrer la sortie d&rsquo;une commande dans un fichier<a class="headerlink" href="#enregistrer-la-sortie-dune-commande-dans-un-fichier" title="Permanent link"></a></h3>
@@ -1135,39 +1148,39 @@ cat filename &gt;&gt; other_filename      # Ajoute le contenu à la fin du fichi
 <p><br><br></p>
 <h2 id="vim">Vim<a class="headerlink" href="#vim" title="Permanent link"></a></h2>
 <h3 id="changer-de-mode">Changer de mode<a class="headerlink" href="#changer-de-mode" title="Permanent link"></a></h3>
-<div class="codehilite"><pre>i           Passer en mode édition/insertion
-Escp        Passer en mode commande
+<div class="codehilite"><pre>i           # Passer en mode édition/insertion
+Escp        # Passer en mode commande
 </pre></div>
 
 <h3 id="enregistrer-et-quitter">Enregistrer et quitter<a class="headerlink" href="#enregistrer-et-quitter" title="Permanent link"></a></h3>
-<div class="codehilite"><pre>:w                          Enregistrer sans quitter
-:w &lt;chemin vers fichier&gt;    Enregistrer sous
-:x ou :wq                   Enregistrer et quitter
-:q                          Quitter
-:q!                         Quitter en ignorant les modifications
+<div class="codehilite"><pre>:w                          # Enregistrer sans quitter
+:w &lt;chemin vers fichier&gt;    # Enregistrer sous
+:x ou :wq                   # Enregistrer et quitter
+:q                          # Quitter
+:q!                         # Quitter en ignorant les modifications
 </pre></div>
 
 <h3 id="se-deplacer-dans-le-fichier">Se déplacer dans le fichier<a class="headerlink" href="#se-deplacer-dans-le-fichier" title="Permanent link"></a></h3>
-<div class="codehilite"><pre>:1          Aller à la première ligne
-:10         Aller à la ligne 10
-:$          Aller à la fin du fichier
-$           Placer le curseur à la fin d&#39;une ligne
+<div class="codehilite"><pre>:1          # Aller à la première ligne
+:10         # Aller à la ligne 10
+:$          # Aller à la fin du fichier
+$           # Placer le curseur à la fin d&#39;une ligne
 </pre></div>
 
 <h3 id="copier-couper-coller">Copier / couper / coller<a class="headerlink" href="#copier-couper-coller" title="Permanent link"></a></h3>
-<div class="codehilite"><pre>yy          Copier une ligne
-dd          Couper ou supprimer une ligne
-p           Coller
+<div class="codehilite"><pre>yy          # Copier une ligne
+dd          # Couper ou supprimer une ligne
+p           # Coller
 </pre></div>
 
 <h3 id="annuler-refaire-une-action">Annuler / Refaire une action<a class="headerlink" href="#annuler-refaire-une-action" title="Permanent link"></a></h3>
-<div class="codehilite"><pre>u           Annuler
-.           Refaire une action
+<div class="codehilite"><pre>u           # Annuler
+.           # Refaire une action
 </pre></div>
 
 <h3 id="rechercher">Rechercher<a class="headerlink" href="#rechercher" title="Permanent link"></a></h3>
-<div class="codehilite"><pre>/test       Rechercher le mot &quot;test&quot;
-?test       Rechercher le mot &quot;test&quot; vers le haut
-n           Occurence suivante
-? enter     Occurence précédente
+<div class="codehilite"><pre>/test       # Rechercher le mot &quot;test&quot;
+?test       # Rechercher le mot &quot;test&quot; vers le haut
+n           # Occurence suivante
+? enter     # Occurence précédente
 </pre></div></article></body></html>

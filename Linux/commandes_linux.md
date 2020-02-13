@@ -18,6 +18,18 @@ Ctrl + L (ou clear)
 man <commande>
 ```
 
+###Afficher l'historique des commandes lancées
+```git
+history
+history 20							# Afficher les 20 dernières commandes
+history | grep -i <search> | less	# Afficher les 10 dernières commandes filtrées sur un mot clé
+```
+
+###Recherche dans l'historique
+```git
+Ctrl + R
+```
+
 ###Afficher le répertoire courant
 ```git
 pwd
@@ -26,8 +38,8 @@ pwd
 ###Afficher le répertoire courant
 ```git
 ls
-ls -l 		Afficher les détails pour chaque fichier
-ls -a 		Afficher les fichiers cachés
+ls -l 		# Afficher les détails pour chaque fichier
+ls -a 		# Afficher les fichiers cachés
 ```
 
 ###Changer de répertoire
@@ -67,7 +79,10 @@ rm -f <filename|directory>
 
 ###Afficher le contenu d'un fichier
 ```git
-cat <filename>
+cat <filename>			# Affiche tout le fichier
+tail <filename>			# Affiche les 10 dernières lignes d'un fichier
+tail -20 <filename>		# Affiche les 20 dernières lignes d'un fichier
+tail -f <filename>		# Affiche les 10 dernières lignes d'un fichier puis les lignes suivantes automatiquement lorsque le fichier est modifié
 ```
 
 ###Enregistrer la sortie d'une commande dans un fichier
@@ -101,44 +116,44 @@ crontab -e
 
 ###Changer de mode
 ```git
-i 			Passer en mode édition/insertion
-Escp 		Passer en mode commande
+i 			# Passer en mode édition/insertion
+Escp 		# Passer en mode commande
 ```
 
 ###Enregistrer et quitter
 ```git
-:w 							Enregistrer sans quitter
-:w <chemin vers fichier> 	Enregistrer sous
-:x ou :wq 					Enregistrer et quitter
-:q 							Quitter
-:q! 						Quitter en ignorant les modifications
+:w 							# Enregistrer sans quitter
+:w <chemin vers fichier> 	# Enregistrer sous
+:x ou :wq 					# Enregistrer et quitter
+:q 							# Quitter
+:q! 						# Quitter en ignorant les modifications
 ```
 
 ###Se déplacer dans le fichier
 ```git
-:1 			Aller à la première ligne
-:10 		Aller à la ligne 10
-:$ 			Aller à la fin du fichier
-$ 			Placer le curseur à la fin d'une ligne
+:1 			# Aller à la première ligne
+:10 		# Aller à la ligne 10
+:$ 			# Aller à la fin du fichier
+$ 			# Placer le curseur à la fin d'une ligne
 ```
 
 ###Copier / couper / coller
 ```git
-yy 			Copier une ligne
-dd 			Couper ou supprimer une ligne
-p 			Coller
+yy 			# Copier une ligne
+dd 			# Couper ou supprimer une ligne
+p 			# Coller
 ```
 
 ###Annuler / Refaire une action
 ```git
-u 			Annuler
-. 			Refaire une action
+u 			# Annuler
+. 			# Refaire une action
 ```
 
 ###Rechercher
 ```git
-/test		Rechercher le mot "test"
-?test		Rechercher le mot "test" vers le haut
-n 			Occurence suivante
-? enter		Occurence précédente
+/test		# Rechercher le mot "test"
+?test		# Rechercher le mot "test" vers le haut
+n 			# Occurence suivante
+? enter		# Occurence précédente
 ```
