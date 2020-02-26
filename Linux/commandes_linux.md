@@ -3,82 +3,83 @@
 **Sommaire**
 
 * [Commandes courantes](#commandes-courantes)
+* [Droits](#droits)
 * [Crontab](#crontab)
 * [Vim](#vim)
 
 ##Commandes courantes
 
 ###Nettoyer le terminal
-```git
+```
 Ctrl + L (ou clear)
 ```
 
 ###Afficher l'aide d'une commande
-```git
+```
 man <commande>
 ```
 
 ###Afficher l'historique des commandes lancées
-```git
+```
 history
 history 20							# Afficher les 20 dernières commandes
 history | grep -i <search> | less	# Afficher les 10 dernières commandes filtrées sur un mot clé
 ```
 
 ###Recherche dans l'historique
-```git
+```
 Ctrl + R
 ```
 
 ###Afficher le répertoire courant
-```git
+```
 pwd
 ```
 
 ###Afficher le répertoire courant
-```git
+```
 ls
 ls -l 		# Afficher les détails pour chaque fichier
 ls -a 		# Afficher les fichiers cachés
 ```
 
 ###Changer de répertoire
-```git
+```
 cd <directory>
 ```
 
 ###Créer un répertoire
-```git
+```
 mkdir <directory>
 ```
 
 ###Supprimer un répertoire
-```git
+```
 rmdir <directory>
 ```
 
 ###Créer un fichier
-```git
+```
 touch <filename>
 ```
 
 ###Copier un fichier ou un répertoire
-```git
+```
 cp <old_name> <new_name>
 ```
 
 ###Renommer un fichier
-```git
+```
 mv <old_name> <new_name>
 ```
 
 ###Renommer un fichier
-```git
+```
 rm -f <filename|directory>
 ```
 
 ###Afficher le contenu d'un fichier
-```git
+```
 cat <filename>			# Affiche tout le fichier
 tail <filename>			# Affiche les 10 dernières lignes d'un fichier
 tail -20 <filename>		# Affiche les 20 dernières lignes d'un fichier
@@ -86,9 +87,49 @@ tail -f <filename>		# Affiche les 10 dernières lignes d'un fichier puis les lig
 ```
 
 ###Enregistrer la sortie d'une commande dans un fichier
-```git
+```
 cat filename > other_filename		# Ecrase le contenu
 cat filename >> other_filename		# Ajoute le contenu à la fin du fichier
+```
+
+<br><br>
+
+##Droits
+
+###Visualiser les droits des fichiers d'un répertoire
+```
+ls -l <directory>
+```
+
+***Exemple***
+```
+drwxrwx---+ 2 loic.pascal utilisateurs du domaine 4096 févr. 26 16:16
+-rwxrwxr--+ 1 loic.pascal utilisateurs du domaine 1160 févr. 26 15:56 participationBO.js
+```
+
+Le `d` en début de ligne signifie qu'il s'agit d'un répertoire.  
+Le `l` en début de ligne signifie qu'il s'agit d'un lien.  
+
+```
+1er groupe  : -rwx------ Propriétaire
+2ème groupe : ----rwx--- Groupe
+3ème groupe : -------rwx Public (autres utilisateurs)
+
+r = read (lire)
+w = write (écrire)
+x = execute (executer) 
+```
+
+###Modifier les droits d'un fichier
+```
+chmod 755 <filename> 		# Pour un fichier
+chmod -R 755 <filename> 	# Pour un répertoire
+```
+
+```
+"4" pour le droit de lecture (read)
+"2" pour le droit d'écriture (write)
+"1" pour le droit d'exécution (execute)
 ```
 
 <br><br>
@@ -96,17 +137,17 @@ cat filename >> other_filename		# Ajoute le contenu à la fin du fichier
 ##Crontab
 
 ###Afficher la crontab
-```git
+```
 crontab -l
 ```
 
 ###Exporter la crontab dans un fichier
-```git
+```
 crontab -l > mon_fichier
 ```
 
 ###Editer la crontab (avec vim)
-```git
+```
 crontab -e
 ```
 
@@ -115,13 +156,13 @@ crontab -e
 ##Vim
 
 ###Changer de mode
-```git
+```
 i 			# Passer en mode édition/insertion
 Escp 		# Passer en mode commande
 ```
 
 ###Enregistrer et quitter
-```git
+```
 :w 							# Enregistrer sans quitter
 :w <chemin vers fichier> 	# Enregistrer sous
 :x ou :wq 					# Enregistrer et quitter
@@ -130,7 +171,7 @@ Escp 		# Passer en mode commande
 ```
 
 ###Se déplacer dans le fichier
-```git
+```
 :1 			# Aller à la première ligne
 :10 		# Aller à la ligne 10
 :$ 			# Aller à la fin du fichier
@@ -138,20 +179,20 @@ $ 			# Placer le curseur à la fin d'une ligne
 ```
 
 ###Copier / couper / coller
-```git
+```
 yy 			# Copier une ligne
 dd 			# Couper ou supprimer une ligne
 p 			# Coller
 ```
 
 ###Annuler / Refaire une action
-```git
+```
 u 			# Annuler
 . 			# Refaire une action
 ```
 
 ###Rechercher
-```git
+```
 /test		# Rechercher le mot "test"
 ?test		# Rechercher le mot "test" vers le haut
 n 			# Occurence suivante

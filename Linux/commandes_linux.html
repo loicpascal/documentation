@@ -1059,6 +1059,7 @@ body .markdown-body
 <p><strong>Sommaire</strong></p>
 <ul>
 <li><a href="#commandes-courantes">Commandes courantes</a></li>
+<li><a href="#droits">Droits</a></li>
 <li><a href="#crontab">Crontab</a></li>
 <li><a href="#vim">Vim</a></li>
 </ul>
@@ -1129,6 +1130,37 @@ tail -f &lt;filename&gt;      # Affiche les 10 dernières lignes d&#39;un fichie
 <h3 id="enregistrer-la-sortie-dune-commande-dans-un-fichier">Enregistrer la sortie d&rsquo;une commande dans un fichier<a class="headerlink" href="#enregistrer-la-sortie-dune-commande-dans-un-fichier" title="Permanent link"></a></h3>
 <div class="codehilite"><pre>cat filename &gt; other_filename       # Ecrase le contenu
 cat filename &gt;&gt; other_filename      # Ajoute le contenu à la fin du fichier
+</pre></div>
+
+<p><br><br></p>
+<h2 id="droits">Droits<a class="headerlink" href="#droits" title="Permanent link"></a></h2>
+<h3 id="visualiser-les-droits-des-fichiers-dun-repertoire">Visualiser les droits des fichiers d&rsquo;un répertoire<a class="headerlink" href="#visualiser-les-droits-des-fichiers-dun-repertoire" title="Permanent link"></a></h3>
+<div class="codehilite"><pre>ls -l &lt;directory&gt;
+</pre></div>
+
+<p><strong><em>Exemple</em></strong>
+<div class="codehilite"><pre>drwxrwx---+ 2 loic.pascal utilisateurs du domaine 4096 févr. 26 16:16
+-rwxrwxr--+ 1 loic.pascal utilisateurs du domaine 1160 févr. 26 15:56 participationBO.js
+</pre></div></p>
+<p>Le <code>d</code> en début de ligne signifie qu&rsquo;il s&rsquo;agit d&rsquo;un répertoire.<br />
+Le <code>l</code> en début de ligne signifie qu&rsquo;il s&rsquo;agit d&rsquo;un lien.  </p>
+<div class="codehilite"><pre>1er groupe  : -rwx------ Propriétaire
+2ème groupe : ----rwx--- Groupe
+3ème groupe : -------rwx Public (autres utilisateurs)
+
+r = read (lire)
+w = write (écrire)
+x = execute (executer) 
+</pre></div>
+
+<h3 id="modifier-les-droits-dun-fichier">Modifier les droits d&rsquo;un fichier<a class="headerlink" href="#modifier-les-droits-dun-fichier" title="Permanent link"></a></h3>
+<div class="codehilite"><pre>chmod 755 &lt;filename&gt;        # Pour un fichier
+chmod -R 755 &lt;filename&gt;     # Pour un répertoire
+</pre></div>
+
+<div class="codehilite"><pre>&quot;4&quot; pour le droit de lecture (read)
+&quot;2&quot; pour le droit d&#39;écriture (write)
+&quot;1&quot; pour le droit d&#39;exécution (execute)
 </pre></div>
 
 <p><br><br></p>
