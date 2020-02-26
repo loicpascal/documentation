@@ -32,6 +32,9 @@
     * [Changer de branche](#changer-de-branche)
     * [Mettre à jour la branche](#mettre-a-jour-la-branche)
     * [Lister les branches](#lister-les-branches)
+* [Commandes EOLAS](#commandes-eolas)
+    * [Supprimer toutes les branches de suivi fusionnées qui ont été supprimées sur le distant](#supprimer-toutes-les-branches-de-suivi-fusionnees-qui-ont-ete-supprimees-sur-le-distant)
+    * [Forcer la suppression de toutes les branches de suivi locales qui ont été supprimées sur le distant](#forcer-la-suppression-de-toutes-les-branches-de-suivi-locales-qui-ont-ete-supprimees-sur-le-distant)
 
 
 ##Gérer un dépôt
@@ -235,6 +238,10 @@ git show <commit> <nom_du_fichier>
 **Annuler le dernier commit**
 ```git
 git reset HEAD^                         # Revient à revenir à l'avant-dernier commit
+
+OU
+
+git reset HEAD~1
 ```
 
 **Revenir à l'avant-avant-dernier commit**
@@ -325,6 +332,10 @@ git branch
 ```git
 git branch -r
 ```
+
+<br/><br/>
+
+##Commandes EOLAS
 
 ###Supprimer toutes les branches de suivi fusionnées qui ont été supprimées sur le distant
 
