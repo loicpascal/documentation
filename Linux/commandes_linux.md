@@ -73,10 +73,11 @@ cp <old_name> <new_name>
 mv <old_name> <new_name>
 ```
 
-###Renommer un fichier
+###Supprimer un fichier
 ```
 rm -f <filename|directory>
 ```
+`-f` force la suppression
 
 ###Afficher le contenu d'un fichier
 ```
