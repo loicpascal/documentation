@@ -265,11 +265,22 @@ Avec un `reset HEAD`, seuls les commit sont supprimés. Les modifications elles,
 git reset --hard HEAD^
 ```
 
+**Annuler tous les changements sur le dépôt local**
+```git
+git reset --hard
+```
+
+**Remettre l'état d'une branche locale dans le même état que sur le dépôt distant (forcer)**
+```git
+git reset --hard origin/<branch>
+```
+Attention, supprime les changements locaux et les commits non pushed
+
 ###git checkout
 
 **Annuler les modifications d'un fichier avant un commit**
 ```git
-git checkout nom_fichier
+git checkout <nom_fichier>
 ```
 
 <br/><br/>
@@ -350,3 +361,13 @@ Alias de `git fetch -p && LANG=en_US git branch -vv --merged | awk '/: gone]/{pr
 git branch-cleanup-force
 ```
 Alias de `git fetch -p && LANG=en_US git branch -vv | awk '/: gone]/{print $1}' | xargs -rn 1 git branch -D`
+
+###Rebaser une branche fille depuis sa branche mère
+
+```git
+git co [branch-mere]
+git pull
+git co [branch-fille]
+git update-from origin [branch-mere]
+git push --force origin [branch-fille]
+```

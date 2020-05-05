@@ -1233,6 +1233,10 @@ git blame -L 1,5 README.md              # Restreindre sur un ensemble de lignes
 <h3 id="git-reset">git reset<a class="headerlink" href="#git-reset" title="Permanent link"></a></h3>
 <p><strong>Annuler le dernier commit</strong>
 <div class="codehilite"><pre>git reset HEAD^                         # Revient à revenir à l&#39;avant-dernier commit
+
+OU
+
+git reset HEAD~1
 </pre></div></p>
 <p><strong>Revenir à l&rsquo;avant-avant-dernier commit</strong>
 <div class="codehilite"><pre>git reset HEAD^^
@@ -1248,9 +1252,16 @@ git reset HEAD~2
 <p><strong>Annuler tous les changements du dernier commit</strong>
 <div class="codehilite"><pre>git reset --hard HEAD^
 </pre></div></p>
+<p><strong>Annuler tous les changements sur le dépôt local</strong>
+<div class="codehilite"><pre>git reset --hard
+</pre></div></p>
+<p><strong>Remettre l&rsquo;état d&rsquo;une branche locale dans le même état que sur le dépôt distant (forcer)</strong>
+<div class="codehilite"><pre>git reset --hard origin/&lt;branch&gt;
+</pre></div>
+Attention, supprime les changements locaux et les commits non pushed</p>
 <h3 id="git-checkout">git checkout<a class="headerlink" href="#git-checkout" title="Permanent link"></a></h3>
 <p><strong>Annuler les modifications d&rsquo;un fichier avant un commit</strong>
-<div class="codehilite"><pre>git checkout nom_fichier
+<div class="codehilite"><pre>git checkout &lt;nom_fichier&gt;
 </pre></div></p>
 <p><br/><br/></p>
 <h2 id="reecrire-lhistorique">Réécrire l&rsquo;historique<a class="headerlink" href="#reecrire-lhistorique" title="Permanent link"></a></h2>
@@ -1297,4 +1308,11 @@ Alias de <code>git fetch -p &amp;&amp; LANG=en_US git branch -vv --merged | awk 
 <h3 id="forcer-la-suppression-de-toutes-les-branches-de-suivi-locales-qui-ont-ete-supprimees-sur-le-distant">Forcer la suppression de toutes les branches de suivi locales qui ont été supprimées sur le distant<a class="headerlink" href="#forcer-la-suppression-de-toutes-les-branches-de-suivi-locales-qui-ont-ete-supprimees-sur-le-distant" title="Permanent link"></a></h3>
 <p><div class="codehilite"><pre>git branch-cleanup-force
 </pre></div>
-Alias de <code>git fetch -p &amp;&amp; LANG=en_US git branch -vv | awk '/: gone]/{print $1}' | xargs -rn 1 git branch -D</code></p></article></body></html>
+Alias de <code>git fetch -p &amp;&amp; LANG=en_US git branch -vv | awk '/: gone]/{print $1}' | xargs -rn 1 git branch -D</code></p>
+<h3 id="rebaser-une-branche-fille-depuis-sa-branche-mere">Rebaser une branche fille depuis sa branche mère<a class="headerlink" href="#rebaser-une-branche-fille-depuis-sa-branche-mere" title="Permanent link"></a></h3>
+<div class="codehilite"><pre>git co [branch-mere]
+git pull
+git co [branch-fille]
+git update-from origin [branch-mere]
+git push --force origin [branch-fille]
+</pre></div></article></body></html>
