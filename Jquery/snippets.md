@@ -14,7 +14,7 @@
 
 **Récupérer l'option sélectionnée**
 ```javascript
-$('#input-name option:selected')
+$('#ID_PARTICIPATIONPHASE').find('option:selected');
 ```
 
 **Récupérer la valeur de l'option sélectionnée**
