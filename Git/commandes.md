@@ -32,6 +32,7 @@
     * [Changer de branche](#changer-de-branche)
     * [Mettre à jour la branche](#mettre-a-jour-la-branche)
     * [Lister les branches](#lister-les-branches)
+    * [Supprimer une branche](#supprimer-une-branche)
 * [Commandes EOLAS](#commandes-eolas)
     * [Supprimer toutes les branches de suivi fusionnées qui ont été supprimées sur le distant](#supprimer-toutes-les-branches-de-suivi-fusionnees-qui-ont-ete-supprimees-sur-le-distant)
     * [Forcer la suppression de toutes les branches de suivi locales qui ont été supprimées sur le distant](#forcer-la-suppression-de-toutes-les-branches-de-suivi-locales-qui-ont-ete-supprimees-sur-le-distant)
@@ -342,6 +343,12 @@ git branch
 
 ```git
 git branch -r
+```
+
+###Supprimer une branche
+
+```git
+git branch -D <branch>
 ```
 
 <br/><br/>
