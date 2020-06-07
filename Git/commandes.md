@@ -372,9 +372,11 @@ Alias de `git fetch -p && LANG=en_US git branch -vv | awk '/: gone]/{print $1}' 
 ###Rebaser une branche fille depuis sa branche mère
 
 ```git
-git co [branch-mere]
+git co <branch-mere>
 git pull
-git co [branch-fille]
-git update-from origin [branch-mere]
-git push --force origin [branch-fille]
+git co <branch-fille>
+git update-from origin <branch-mere>
+git push --force origin <branch-fille>
 ```
+
+Si `git update-from origin <branch-mere>` ne fonctionne pas, utiliser la commande `git pull --rebase origin <branch-mere>`

@@ -1315,9 +1315,11 @@ Alias de <code>git fetch -p &amp;&amp; LANG=en_US git branch -vv --merged | awk 
 </pre></div>
 Alias de <code>git fetch -p &amp;&amp; LANG=en_US git branch -vv | awk '/: gone]/{print $1}' | xargs -rn 1 git branch -D</code></p>
 <h3 id="rebaser-une-branche-fille-depuis-sa-branche-mere">Rebaser une branche fille depuis sa branche mère<a class="headerlink" href="#rebaser-une-branche-fille-depuis-sa-branche-mere" title="Permanent link"></a></h3>
-<div class="codehilite"><pre>git co [branch-mere]
+<div class="codehilite"><pre>git co &lt;branch-mere&gt;
 git pull
-git co [branch-fille]
-git update-from origin [branch-mere]
-git push --force origin [branch-fille]
-</pre></div></article></body></html>
+git co &lt;branch-fille&gt;
+git update-from origin &lt;branch-mere&gt;
+git push --force origin &lt;branch-fille&gt;
+</pre></div>
+
+<p>Si <code>git update-from origin &lt;branch-mere&gt;</code> ne fonctionne pas, utiliser la commande <code>git pull --rebase origin &lt;branch-mere&gt;</code></p></article></body></html>
