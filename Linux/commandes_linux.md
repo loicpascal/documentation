@@ -22,8 +22,8 @@ man <commande>
 ###Afficher l'historique des commandes lancées
 ```
 history
-history 20							# Afficher les 20 dernières commandes
-history | grep -i <search> | less	# Afficher les 10 dernières commandes filtrées sur un mot clé
+history 20                          # Afficher les 20 dernières commandes
+history | grep -i <search> | less   # Afficher les 10 dernières commandes filtrées sur un mot clé
 ```
 
 ###Recherche dans l'historique
@@ -39,8 +39,8 @@ pwd
 ###Afficher le répertoire courant
 ```
 ls
-ls -l 		# Afficher les détails pour chaque fichier
-ls -a 		# Afficher les fichiers cachés
+ls -l       # Afficher les détails pour chaque fichier
+ls -a       # Afficher les fichiers cachés
 ```
 
 ###Changer de répertoire
@@ -81,21 +81,22 @@ rm -f <filename|directory>
 
 ###Afficher le contenu d'un fichier
 ```
-cat <filename>			# Affiche tout le fichier
-tail <filename>			# Affiche les 10 dernières lignes d'un fichier
-tail -20 <filename>		# Affiche les 20 dernières lignes d'un fichier
-tail -f <filename>		# Affiche les 10 dernières lignes d'un fichier puis les lignes suivantes automatiquement lorsque le fichier est modifié
+cat <filename>          # Affiche tout le fichier
+tail <filename>         # Affiche les 10 dernières lignes d'un fichier
+tail -20 <filename>     # Affiche les 20 dernières lignes d'un fichier
+tail -f <filename>      # Affiche les 10 dernières lignes d'un fichier puis les lignes suivantes automatiquement lorsque le fichier est modifié
 ```
 
 ###Enregistrer la sortie d'une commande dans un fichier
 ```
-cat filename > other_filename		# Ecrase le contenu
-cat filename >> other_filename		# Ajoute le contenu à la fin du fichier
+cat filename > other_filename       # Ecrase le contenu
+cat filename >> other_filename      # Ajoute le contenu à la fin du fichier
 ```
 
 <br><br>
 
 ##Droits
+[Doc Ubuntu](https://doc.ubuntu-fr.org/droits "Doc Ubuntu")
 
 ###Visualiser les droits des fichiers d'un répertoire
 ```
@@ -123,14 +124,22 @@ x = execute (executer)
 
 ###Modifier les droits d'un fichier
 ```
-chmod 755 <filename> 		# Pour un fichier
-chmod -R 755 <filename> 	# Pour un répertoire
+chmod 755 <filename>        # Pour un fichier
+chmod -R 755 <directory>    # Pour un répertoire
 ```
 
 ```
 "4" pour le droit de lecture (read)
 "2" pour le droit d'écriture (write)
 "1" pour le droit d'exécution (execute)
+```
+
+###Modifier le propriétaire et le groupe d'un fichier
+[Doc Ubuntu](https://doc.ubuntu-fr.org/permissions "Doc Ubuntu")  
+Il faut être root pour pouvoir faire ce changement.
+```
+chown <user>:<group> <file|directory>
+chown -R <user>:<group> <directory>         # Récursif
 ```
 
 <br><br>
@@ -158,44 +167,44 @@ crontab -e
 
 ###Changer de mode
 ```
-i 			# Passer en mode édition/insertion
-Escp 		# Passer en mode commande
+i           # Passer en mode édition/insertion
+Escp        # Passer en mode commande
 ```
 
 ###Enregistrer et quitter
 ```
-:w 							# Enregistrer sans quitter
-:w <chemin vers fichier> 	# Enregistrer sous
-:x ou :wq 					# Enregistrer et quitter
-:q 							# Quitter
-:q! 						# Quitter en ignorant les modifications
+:w                          # Enregistrer sans quitter
+:w <chemin vers fichier>    # Enregistrer sous
+:x ou :wq                   # Enregistrer et quitter
+:q                          # Quitter
+:q!                         # Quitter en ignorant les modifications
 ```
 
 ###Se déplacer dans le fichier
 ```
-:1 			# Aller à la première ligne
-:10 		# Aller à la ligne 10
-:$ 			# Aller à la fin du fichier
-$ 			# Placer le curseur à la fin d'une ligne
+:1          # Aller à la première ligne
+:10         # Aller à la ligne 10
+:$          # Aller à la fin du fichier
+$           # Placer le curseur à la fin d'une ligne
 ```
 
 ###Copier / couper / coller
 ```
-yy 			# Copier une ligne
-dd 			# Couper ou supprimer une ligne
-p 			# Coller
+yy          # Copier une ligne
+dd          # Couper ou supprimer une ligne
+p           # Coller
 ```
 
 ###Annuler / Refaire une action
 ```
-u 			# Annuler
-. 			# Refaire une action
+u           # Annuler
+.           # Refaire une action
 ```
 
 ###Rechercher
 ```
-/test		# Rechercher le mot "test"
-?test		# Rechercher le mot "test" vers le haut
-n 			# Occurence suivante
-? enter		# Occurence précédente
+/test       # Rechercher le mot "test"
+?test       # Rechercher le mot "test" vers le haut
+n           # Occurence suivante
+? enter     # Occurence précédente
 ```

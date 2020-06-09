@@ -1134,6 +1134,7 @@ cat filename &gt;&gt; other_filename      # Ajoute le contenu à la fin du fichi
 
 <p><br><br></p>
 <h2 id="droits">Droits<a class="headerlink" href="#droits" title="Permanent link"></a></h2>
+<p><a href="https://doc.ubuntu-fr.org/droits" title="Doc Ubuntu">Doc Ubuntu</a></p>
 <h3 id="visualiser-les-droits-des-fichiers-dun-repertoire">Visualiser les droits des fichiers d&rsquo;un répertoire<a class="headerlink" href="#visualiser-les-droits-des-fichiers-dun-repertoire" title="Permanent link"></a></h3>
 <div class="codehilite"><pre>ls -l &lt;directory&gt;
 </pre></div>
@@ -1155,7 +1156,7 @@ x = execute (executer)
 
 <h3 id="modifier-les-droits-dun-fichier">Modifier les droits d&rsquo;un fichier<a class="headerlink" href="#modifier-les-droits-dun-fichier" title="Permanent link"></a></h3>
 <div class="codehilite"><pre>chmod 755 &lt;filename&gt;        # Pour un fichier
-chmod -R 755 &lt;filename&gt;     # Pour un répertoire
+chmod -R 755 &lt;directory&gt;    # Pour un répertoire
 </pre></div>
 
 <div class="codehilite"><pre>&quot;4&quot; pour le droit de lecture (read)
@@ -1163,6 +1164,12 @@ chmod -R 755 &lt;filename&gt;     # Pour un répertoire
 &quot;1&quot; pour le droit d&#39;exécution (execute)
 </pre></div>
 
+<h3 id="modifier-le-proprietaire-et-le-groupe-dun-fichier">Modifier le propriétaire et le groupe d&rsquo;un fichier<a class="headerlink" href="#modifier-le-proprietaire-et-le-groupe-dun-fichier" title="Permanent link"></a></h3>
+<p><a href="https://doc.ubuntu-fr.org/permissions" title="Doc Ubuntu">Doc Ubuntu</a><br />
+Il faut être root pour pouvoir faire ce changement.
+<div class="codehilite"><pre>chown &lt;user&gt;:&lt;group&gt; &lt;file|directory&gt;
+chown -R &lt;user&gt;:&lt;group&gt; &lt;directory&gt;         # Récursif
+</pre></div></p>
 <p><br><br></p>
 <h2 id="crontab">Crontab<a class="headerlink" href="#crontab" title="Permanent link"></a></h2>
 <h3 id="afficher-la-crontab">Afficher la crontab<a class="headerlink" href="#afficher-la-crontab" title="Permanent link"></a></h3>
