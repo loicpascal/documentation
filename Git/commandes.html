@@ -1085,6 +1085,7 @@ body .markdown-body
 <li><a href="#annuler-des-changements">Annuler des changements</a><ul>
 <li><a href="#git-reset">git reset</a></li>
 <li><a href="#git-checkout">git checkout</a></li>
+<li><a href="#git-revert">git revert</a></li>
 </ul>
 </li>
 <li><a href="#reecrire-lhistorique">Réécrire l&rsquo;historique</a><ul>
@@ -1263,6 +1264,10 @@ Attention, supprime les changements locaux et les commits non pushed</p>
 <h3 id="git-checkout">git checkout<a class="headerlink" href="#git-checkout" title="Permanent link"></a></h3>
 <p><strong>Annuler les modifications d&rsquo;un fichier avant un commit</strong>
 <div class="codehilite"><pre>git checkout &lt;nom_fichier&gt;
+</pre></div></p>
+<h3 id="git-revert">git revert<a class="headerlink" href="#git-revert" title="Permanent link"></a></h3>
+<p><strong>Annuler un commit en créant un nouveau commit contenant les changements inverses</strong>
+<div class="codehilite"><pre>git revert &lt;commit&gt;
 </pre></div></p>
 <p><br/><br/></p>
 <h2 id="reecrire-lhistorique">Réécrire l&rsquo;historique<a class="headerlink" href="#reecrire-lhistorique" title="Permanent link"></a></h2>

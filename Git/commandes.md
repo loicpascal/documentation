@@ -24,6 +24,7 @@
 * [Annuler des changements](#annuler-des-changements)
     * [git reset](#git-reset)
     * [git checkout](#git-checkout)
+    * [git revert](#git-revert)
 * [Réécrire l'historique](#reecrire-lhistorique)
     * [git commit](#git-commit_1)
 * [Gestion des branches](#gestion-des-branches)
@@ -282,6 +283,13 @@ Attention, supprime les changements locaux et les commits non pushed
 **Annuler les modifications d'un fichier avant un commit**
 ```git
 git checkout <nom_fichier>
+```
+
+###git revert
+
+**Annuler un commit en créant un nouveau commit contenant les changements inverses**
+```git
+git revert <commit>
 ```
 
 <br/><br/>
