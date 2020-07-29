@@ -1092,6 +1092,12 @@ ls -l       # Afficher les détails pour chaque fichier
 ls -a       # Afficher les fichiers cachés
 </pre></div>
 
+<div class="codehilite"><pre>Avec l&#39;option -l, le premier caractère indique :
+- : fichier classique
+d : répertoire
+l : lien symbolique
+</pre></div>
+
 <h3 id="changer-de-repertoire">Changer de répertoire<a class="headerlink" href="#changer-de-repertoire" title="Permanent link"></a></h3>
 <div class="codehilite"><pre>cd &lt;directory&gt;
 </pre></div>
@@ -1134,7 +1140,8 @@ cat filename &gt;&gt; other_filename      # Ajoute le contenu à la fin du fichi
 
 <p><br><br></p>
 <h2 id="droits">Droits<a class="headerlink" href="#droits" title="Permanent link"></a></h2>
-<p><a href="https://doc.ubuntu-fr.org/droits" title="Doc Ubuntu">Doc Ubuntu</a></p>
+<p><a href="https://doc.ubuntu-fr.org/droits" title="Doc Ubuntu - Droits">Doc Ubuntu - Droits</a>
+<a href="https://doc.ubuntu-fr.org/permissions" title="Doc Ubuntu - Permissions">Doc Ubuntu - Permissions</a></p>
 <h3 id="visualiser-les-droits-des-fichiers-dun-repertoire">Visualiser les droits des fichiers d&rsquo;un répertoire<a class="headerlink" href="#visualiser-les-droits-des-fichiers-dun-repertoire" title="Permanent link"></a></h3>
 <div class="codehilite"><pre>ls -l &lt;directory&gt;
 </pre></div>
@@ -1155,21 +1162,81 @@ x = execute (executer)
 </pre></div>
 
 <h3 id="modifier-les-droits-dun-fichier">Modifier les droits d&rsquo;un fichier<a class="headerlink" href="#modifier-les-droits-dun-fichier" title="Permanent link"></a></h3>
-<div class="codehilite"><pre>chmod 755 &lt;filename&gt;        # Pour un fichier
-chmod -R 755 &lt;directory&gt;    # Pour un répertoire
+<p><strong><em>Avec chmod en gérant chaque droit séparément</em></strong></p>
+<ol>
+<li>À qui s&rsquo;applique le changement :</li>
+</ol>
+<ul>
+<li>u (user, utilisateur) représente la catégorie &ldquo;propriétaire&rdquo;</li>
+<li>g (group, groupe) représente la catégorie &ldquo;groupe propriétaire&rdquo;</li>
+<li>o (others, autres) représente la catégorie &ldquo;reste du monde&rdquo;</li>
+<li>a (all, tous) représente l&rsquo;ensemble des trois catégories</li>
+</ul>
+<ol start="2">
+<li>La modification que l&rsquo;on veut faire :</li>
+</ol>
+<ul>
+<li>&rsquo;+&rsquo; : ajouter</li>
+<li>&rsquo;-&lsquo; : supprimer</li>
+<li>&rsquo;=&rsquo; : affectation</li>
+</ul>
+<ol start="3">
+<li>Le droit que l&rsquo;on veut modifier</li>
+</ol>
+<ul>
+<li>r : read ⇒ lecture</li>
+<li>w : write ⇒ écriture</li>
+<li>x : execute ⇒ exécution</li>
+<li>X : eXecute ⇒ exécution, concerne uniquement les répertoires</li>
+</ul>
+<div class="codehilite"><pre>chmod o-w &lt;filename&gt;        # Supprime le droit d&#39;écriture pour les autres
+chmod a+x &lt;filename&gt;        # Ajoute le droit d&#39;éxecution à tout le monde
+chmod a+rx,g-w &lt;filename&gt;   # Ajoute le droit de lecture et d&#39;éxecution à tout le monde et supprime le droit d&#39;écriture au groupe
 </pre></div>
 
+<p><strong><em>Avec chmod en octal</em></strong>
+<div class="codehilite"><pre>chmod 755 &lt;filename&gt;        # Pour un fichier
+chmod -R 755 &lt;directory&gt;    # Pour un répertoire
+</pre></div></p>
 <div class="codehilite"><pre>&quot;4&quot; pour le droit de lecture (read)
 &quot;2&quot; pour le droit d&#39;écriture (write)
 &quot;1&quot; pour le droit d&#39;exécution (execute)
+
+Donc :
+
+0 : - - - (aucun droit)
+1 : - - x (exécution)
+2 : - w - (écriture)
+3 : - w x (écriture et exécution)
+4 : r - - (lecture seule)
+5 : r - x (lecture et exécution)
+6 : r w - (lecture et écriture)
+7 : r w x (lecture, écriture et exécution)
 </pre></div>
 
 <h3 id="modifier-le-proprietaire-et-le-groupe-dun-fichier">Modifier le propriétaire et le groupe d&rsquo;un fichier<a class="headerlink" href="#modifier-le-proprietaire-et-le-groupe-dun-fichier" title="Permanent link"></a></h3>
-<p><a href="https://doc.ubuntu-fr.org/permissions" title="Doc Ubuntu">Doc Ubuntu</a><br />
-Il faut être root pour pouvoir faire ce changement.
-<div class="codehilite"><pre>chown &lt;user&gt;:&lt;group&gt; &lt;file|directory&gt;
-chown -R &lt;user&gt;:&lt;group&gt; &lt;directory&gt;         # Récursif
+<p>Il faut être root pour pouvoir faire ce changement.
+<div class="codehilite"><pre>sudo chown &lt;user&gt; &lt;file|directory&gt;               # Modifie l&#39;utilisateur uniquement
+sudo chgrp &lt;group&gt; &lt;file|directory&gt;              # Modifie le groupe uniquement
+sudo chown &lt;user&gt;:&lt;group&gt; &lt;file|directory&gt;       # Modifie l&#39;utilisateur et le groupe
+sudo chown -R &lt;user&gt;:&lt;group&gt; &lt;directory&gt;         # Récursif
 </pre></div></p>
+<h3 id="lister-les-groupes-de-lutilisateur-connecte">Lister les groupes de l&rsquo;utilisateur connecté<a class="headerlink" href="#lister-les-groupes-de-lutilisateur-connecte" title="Permanent link"></a></h3>
+<p>Le premier groupe de la liste de résultats est le groupe principal de l&rsquo;utilisateur
+<div class="codehilite"><pre>groups
+</pre></div></p>
+<h3 id="lister-les-groupes-dun-utilisateur">Lister les groupes d&rsquo;un utilisateur<a class="headerlink" href="#lister-les-groupes-dun-utilisateur" title="Permanent link"></a></h3>
+<div class="codehilite"><pre>groups &lt;username&gt;
+</pre></div>
+
+<h3 id="lister-les-membres-dun-groupe">Lister les membres d&rsquo;un groupe<a class="headerlink" href="#lister-les-membres-dun-groupe" title="Permanent link"></a></h3>
+<div class="codehilite"><pre>getent group &lt;groupname&gt;
+</pre></div>
+
+<h3 id="lister-tous-les-groupes">Lister tous les groupes<a class="headerlink" href="#lister-tous-les-groupes" title="Permanent link"></a></h3>
+<div class="codehilite"><pre>less /etc/group
+</pre></div>
+
 <p><br><br></p>
 <h2 id="crontab">Crontab<a class="headerlink" href="#crontab" title="Permanent link"></a></h2>
 <h3 id="afficher-la-crontab">Afficher la crontab<a class="headerlink" href="#afficher-la-crontab" title="Permanent link"></a></h3>
