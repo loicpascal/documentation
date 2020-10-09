@@ -36,6 +36,7 @@
     * [Lister les branches](#lister-les-branches)
     * [Supprimer une branche](#supprimer-une-branche)
     * [Trouver la branche qui contient un commit spécifique](#trouver-la-branche-qui-contient-un-commit-specifique)
+    * [Merger une branche A dans une branche B](#merger-une-branche-a-dans-une-branche-b)
 * [Commandes EOLAS](#commandes-eolas)
     * [Supprimer toutes les branches de suivi fusionnées qui ont été supprimées sur le distant](#supprimer-toutes-les-branches-de-suivi-fusionnees-qui-ont-ete-supprimees-sur-le-distant)
     * [Forcer la suppression de toutes les branches de suivi locales qui ont été supprimées sur le distant](#forcer-la-suppression-de-toutes-les-branches-de-suivi-locales-qui-ont-ete-supprimees-sur-le-distant)
@@ -375,6 +376,14 @@ git branch -D <branch>
 
 ```git
 git branch -a --contains <commits>
+```
+
+###Merger une branche A dans une branche B
+
+```git
+git co <branch-B>           # Se rendre sur la branche cible
+git pull                    # S'assurer que la branche cible est à jour
+git merge <branch-A>        # Merger la branche A dans la branche B
 ```
 
 <br/><br/>

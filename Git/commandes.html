@@ -1101,6 +1101,7 @@ body .markdown-body
 <li><a href="#lister-les-branches">Lister les branches</a></li>
 <li><a href="#supprimer-une-branche">Supprimer une branche</a></li>
 <li><a href="#trouver-la-branche-qui-contient-un-commit-specifique">Trouver la branche qui contient un commit spécifique</a></li>
+<li><a href="#merger-une-branche-a-dans-une-branche-b">Merger une branche A dans une branche B</a></li>
 </ul>
 </li>
 <li><a href="#commandes-eolas">Commandes EOLAS</a><ul>
@@ -1319,6 +1320,12 @@ L&rsquo;option <code>--no-commit</code> applique seulement les modifications san
 
 <h3 id="trouver-la-branche-qui-contient-un-commit-specifique">Trouver la branche qui contient un commit spécifique<a class="headerlink" href="#trouver-la-branche-qui-contient-un-commit-specifique" title="Permanent link"></a></h3>
 <div class="codehilite"><pre>git branch -a --contains &lt;commits&gt;
+</pre></div>
+
+<h3 id="merger-une-branche-a-dans-une-branche-b">Merger une branche A dans une branche B<a class="headerlink" href="#merger-une-branche-a-dans-une-branche-b" title="Permanent link"></a></h3>
+<div class="codehilite"><pre>git co &lt;branch-B&gt;           # Se rendre sur la branche cible
+git pull                    # S&#39;assurer que la branche cible est à jour
+git merge &lt;branch-A&gt;        # Merger la branche A dans la branche B
 </pre></div>
 
 <p><br/><br/></p>
