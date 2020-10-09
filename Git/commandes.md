@@ -27,6 +27,7 @@
     * [git revert](#git-revert)
 * [Réécrire l'historique](#reecrire-lhistorique)
     * [git commit](#git-commit_1)
+    * [git cherry-pick](#git-cherry-pick)
 * [Gestion des branches](#gestion-des-branches)
     * [Créer une nouvelle branche](#creer-une-nouvelle-branche)
     * [Pousser une nouvelle branche sur le serveur](#pousser-une-nouvelle-branche-sur-le-serveur)
@@ -303,6 +304,16 @@ git revert <commit>
 ```git
 git commit --amend -m "mon nouveau message"
 ```
+
+###git cherry-pick
+
+**Appliquer un commit à la branche courante**
+```git
+git cherry-pick <commit>
+```
+
+L'option `-edit` permet de saisir un message pour le commit  
+L'option `--no-commit` applique seulement les modifications sans créer un nouveau commit
 
 <br/><br/>
 

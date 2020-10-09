@@ -1090,6 +1090,7 @@ body .markdown-body
 </li>
 <li><a href="#reecrire-lhistorique">Réécrire l&rsquo;historique</a><ul>
 <li><a href="#git-commit_1">git commit</a></li>
+<li><a href="#git-cherry-pick">git cherry-pick</a></li>
 </ul>
 </li>
 <li><a href="#gestion-des-branches">Gestion des branches</a><ul>
@@ -1276,6 +1277,12 @@ Attention, supprime les changements locaux et les commits non pushed</p>
 <p><strong>Changer le dernier commit</strong>
 <div class="codehilite"><pre>git commit --amend -m &quot;mon nouveau message&quot;
 </pre></div></p>
+<h3 id="git-cherry-pick">git cherry-pick<a class="headerlink" href="#git-cherry-pick" title="Permanent link"></a></h3>
+<p><strong>Appliquer un commit à la branche courante</strong>
+<div class="codehilite"><pre>git cherry-pick &lt;commit&gt;
+</pre></div></p>
+<p>L&rsquo;option <code>-edit</code> permet de saisir un message pour le commit<br />
+L&rsquo;option <code>--no-commit</code> applique seulement les modifications sans créer un nouveau commit</p>
 <p><br/><br/></p>
 <h2 id="gestion-des-branches">Gestion des branches<a class="headerlink" href="#gestion-des-branches" title="Permanent link"></a></h2>
 <h3 id="creer-une-nouvelle-branche">Créer une nouvelle branche<a class="headerlink" href="#creer-une-nouvelle-branche" title="Permanent link"></a></h3>
