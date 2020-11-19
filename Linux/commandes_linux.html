@@ -1056,6 +1056,7 @@ body .markdown-body
 .codehilite .il{color:#009999}
 .codehilite .gc{color:#999;background-color:#EAF2F5}
 </style><title>commandes_linux</title></head><body><article class="markdown-body"><h1 id="commandes-linux">Commandes Linux<a class="headerlink" href="#commandes-linux" title="Permanent link"></a></h1>
+<p><a href="https://doc.ubuntu-fr.org/tutoriel/console_commandes_de_base" title="Doc Ubuntu - Commandes de base">Doc Ubuntu - Commandes de base</a></p>
 <p><strong>Sommaire</strong></p>
 <ul>
 <li><a href="#commandes-courantes">Commandes courantes</a></li>
@@ -1074,8 +1075,8 @@ body .markdown-body
 
 <h3 id="afficher-lhistorique-des-commandes-lancees">Afficher l&rsquo;historique des commandes lancées<a class="headerlink" href="#afficher-lhistorique-des-commandes-lancees" title="Permanent link"></a></h3>
 <div class="codehilite"><pre>history
-history 20                          # Afficher les 20 dernières commandes
-history | grep -i &lt;search&gt; | less   # Afficher les 10 dernières commandes filtrées sur un mot clé
+history 20                          # Affiche les 20 dernières commandes
+history | grep -i &lt;search&gt; | less   # Affiche les 10 dernières commandes filtrées sur un mot clé
 </pre></div>
 
 <h3 id="recherche-dans-lhistorique">Recherche dans l&rsquo;historique<a class="headerlink" href="#recherche-dans-lhistorique" title="Permanent link"></a></h3>
@@ -1088,8 +1089,13 @@ history | grep -i &lt;search&gt; | less   # Afficher les 10 dernières commandes
 
 <h3 id="afficher-le-repertoire-courant_1">Afficher le répertoire courant<a class="headerlink" href="#afficher-le-repertoire-courant_1" title="Permanent link"></a></h3>
 <div class="codehilite"><pre>ls
-ls -l       # Afficher les détails pour chaque fichier
-ls -a       # Afficher les fichiers cachés
+ls -l       # Affiche les détails pour chaque fichier
+ls -a       # Affiche les fichiers cachés
+</pre></div>
+
+<h3 id="afficher-la-hierarchie-du-repertoire-courant">Afficher la hiérarchie du répertoire courant<a class="headerlink" href="#afficher-la-hierarchie-du-repertoire-courant" title="Permanent link"></a></h3>
+<div class="codehilite"><pre>tree        # Affiche les sous-répertoires et les fichiers qui s&#39;y trouvent
+tree -d     # Affiche les répertoires uniquement
 </pre></div>
 
 <div class="codehilite"><pre>Avec l&#39;option -l, le premier caractère indique :
@@ -1136,6 +1142,10 @@ tail -f &lt;filename&gt;      # Affiche les 10 dernières lignes d&#39;un fichie
 <h3 id="enregistrer-la-sortie-dune-commande-dans-un-fichier">Enregistrer la sortie d&rsquo;une commande dans un fichier<a class="headerlink" href="#enregistrer-la-sortie-dune-commande-dans-un-fichier" title="Permanent link"></a></h3>
 <div class="codehilite"><pre>cat filename &gt; other_filename       # Ecrase le contenu
 cat filename &gt;&gt; other_filename      # Ajoute le contenu à la fin du fichier
+</pre></div>
+
+<h3 id="localiser-un-fichier">Localiser un fichier<a class="headerlink" href="#localiser-un-fichier" title="Permanent link"></a></h3>
+<div class="codehilite"><pre>locate &lt;filename&gt;
 </pre></div>
 
 <p><br><br></p>

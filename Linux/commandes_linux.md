@@ -107,6 +107,11 @@ cat filename > other_filename       # Ecrase le contenu
 cat filename >> other_filename      # Ajoute le contenu à la fin du fichier
 ```
 
+###Localiser un fichier
+```
+locate <filename>
+```
+
 <br><br>
 
 ##Droits
