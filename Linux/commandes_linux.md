@@ -71,6 +71,7 @@ mkdir <directory>
 ```
 rmdir <directory>
 ```
+`-rf` force la suppression d'un répertoire non vide
 
 ###Créer un fichier
 ```
