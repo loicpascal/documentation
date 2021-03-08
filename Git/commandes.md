@@ -295,6 +295,11 @@ git checkout <nom_fichier>
 git revert <commit>
 ```
 
+**Annuler un commit en appliquant les changements inverses sans créer de commit**
+```git
+git revert -n <commit>
+```
+
 <br/><br/>
 
 ##Réécrire l'historique
