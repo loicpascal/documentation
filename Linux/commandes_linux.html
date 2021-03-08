@@ -118,23 +118,28 @@ body .markdown-body
   padding: 0;
 }
 
-.markdown-body .codehilitetable {
+.markdown-body .codehilitetable,
+.markdown-body .highlighttable {
   border: 0;
   border-spacing: 0;
 }
 
-.markdown-body .codehilitetable tr {
+.markdown-body .codehilitetable tr,
+.markdown-body .highlighttable {
   border: 0;
 }
 
 .markdown-body .codehilitetable pre,
-.markdown-body .codehilitetable div.codehilite {
+.markdown-body .codehilitetable div.codehilite,
+.markdown-body .highlighttable pre,
+.markdown-body .highlighttable div.highlight {
   margin: 0;
 }
 
 .markdown-body .linenos,
 .markdown-body .code,
-.markdown-body .codehilitetable td {
+.markdown-body .codehilitetable td,
+.markdown-body .highlighttable td {
   border: 0;
   padding: 0;
 }
@@ -517,11 +522,13 @@ body .markdown-body
   border: 0;
 }
 
-.markdown-body .codehilite {
+.markdown-body .codehilite,
+.markdown-body .highlight {
   margin-bottom: 16px;
 }
 
 .markdown-body .codehilite pre,
+.markdown-body .highlight pre,
 .markdown-body pre {
   padding: 16px;
   overflow: auto;
@@ -531,7 +538,8 @@ body .markdown-body
   border-radius: 3px;
 }
 
-.markdown-body .codehilite pre {
+.markdown-body .codehilite pre,
+.markdown-body .highlight pre {
   margin-bottom: 0;
   word-break: normal;
 }
@@ -993,68 +1001,68 @@ body .markdown-body
   }
 }
 </style><style>/*GitHub*/
-.codehilite {background-color:#fff;color:#333333;}
-.codehilite .hll {background-color:#ffffcc;}
-.codehilite .c{color:#999988;font-style:italic}
-.codehilite .err{color:#a61717;background-color:#e3d2d2}
-.codehilite .k{font-weight:bold}
-.codehilite .o{font-weight:bold}
-.codehilite .cm{color:#999988;font-style:italic}
-.codehilite .cp{color:#999999;font-weight:bold}
-.codehilite .c1{color:#999988;font-style:italic}
-.codehilite .cs{color:#999999;font-weight:bold;font-style:italic}
-.codehilite .gd{color:#000000;background-color:#ffdddd}
-.codehilite .ge{font-style:italic}
-.codehilite .gr{color:#aa0000}
-.codehilite .gh{color:#999999}
-.codehilite .gi{color:#000000;background-color:#ddffdd}
-.codehilite .go{color:#888888}
-.codehilite .gp{color:#555555}
-.codehilite .gs{font-weight:bold}
-.codehilite .gu{color:#800080;font-weight:bold}
-.codehilite .gt{color:#aa0000}
-.codehilite .kc{font-weight:bold}
-.codehilite .kd{font-weight:bold}
-.codehilite .kn{font-weight:bold}
-.codehilite .kp{font-weight:bold}
-.codehilite .kr{font-weight:bold}
-.codehilite .kt{color:#445588;font-weight:bold}
-.codehilite .m{color:#009999}
-.codehilite .s{color:#dd1144}
-.codehilite .n{color:#333333}
-.codehilite .na{color:teal}
-.codehilite .nb{color:#0086b3}
-.codehilite .nc{color:#445588;font-weight:bold}
-.codehilite .no{color:teal}
-.codehilite .ni{color:purple}
-.codehilite .ne{color:#990000;font-weight:bold}
-.codehilite .nf{color:#990000;font-weight:bold}
-.codehilite .nn{color:#555555}
-.codehilite .nt{color:navy}
-.codehilite .nv{color:teal}
-.codehilite .ow{font-weight:bold}
-.codehilite .w{color:#bbbbbb}
-.codehilite .mf{color:#009999}
-.codehilite .mh{color:#009999}
-.codehilite .mi{color:#009999}
-.codehilite .mo{color:#009999}
-.codehilite .sb{color:#dd1144}
-.codehilite .sc{color:#dd1144}
-.codehilite .sd{color:#dd1144}
-.codehilite .s2{color:#dd1144}
-.codehilite .se{color:#dd1144}
-.codehilite .sh{color:#dd1144}
-.codehilite .si{color:#dd1144}
-.codehilite .sx{color:#dd1144}
-.codehilite .sr{color:#009926}
-.codehilite .s1{color:#dd1144}
-.codehilite .ss{color:#990073}
-.codehilite .bp{color:#999999}
-.codehilite .vc{color:teal}
-.codehilite .vg{color:teal}
-.codehilite .vi{color:teal}
-.codehilite .il{color:#009999}
-.codehilite .gc{color:#999;background-color:#EAF2F5}
+.highlight {background-color:#fff;color:#333333;}
+.highlight .hll {background-color:#ffffcc;}
+.highlight .c{color:#999988;font-style:italic}
+.highlight .err{color:#a61717;background-color:#e3d2d2}
+.highlight .k{font-weight:bold}
+.highlight .o{font-weight:bold}
+.highlight .cm{color:#999988;font-style:italic}
+.highlight .cp{color:#999999;font-weight:bold}
+.highlight .c1{color:#999988;font-style:italic}
+.highlight .cs{color:#999999;font-weight:bold;font-style:italic}
+.highlight .gd{color:#000000;background-color:#ffdddd}
+.highlight .ge{font-style:italic}
+.highlight .gr{color:#aa0000}
+.highlight .gh{color:#999999}
+.highlight .gi{color:#000000;background-color:#ddffdd}
+.highlight .go{color:#888888}
+.highlight .gp{color:#555555}
+.highlight .gs{font-weight:bold}
+.highlight .gu{color:#800080;font-weight:bold}
+.highlight .gt{color:#aa0000}
+.highlight .kc{font-weight:bold}
+.highlight .kd{font-weight:bold}
+.highlight .kn{font-weight:bold}
+.highlight .kp{font-weight:bold}
+.highlight .kr{font-weight:bold}
+.highlight .kt{color:#445588;font-weight:bold}
+.highlight .m{color:#009999}
+.highlight .s{color:#dd1144}
+.highlight .n{color:#333333}
+.highlight .na{color:teal}
+.highlight .nb{color:#0086b3}
+.highlight .nc{color:#445588;font-weight:bold}
+.highlight .no{color:teal}
+.highlight .ni{color:purple}
+.highlight .ne{color:#990000;font-weight:bold}
+.highlight .nf{color:#990000;font-weight:bold}
+.highlight .nn{color:#555555}
+.highlight .nt{color:navy}
+.highlight .nv{color:teal}
+.highlight .ow{font-weight:bold}
+.highlight .w{color:#bbbbbb}
+.highlight .mf{color:#009999}
+.highlight .mh{color:#009999}
+.highlight .mi{color:#009999}
+.highlight .mo{color:#009999}
+.highlight .sb{color:#dd1144}
+.highlight .sc{color:#dd1144}
+.highlight .sd{color:#dd1144}
+.highlight .s2{color:#dd1144}
+.highlight .se{color:#dd1144}
+.highlight .sh{color:#dd1144}
+.highlight .si{color:#dd1144}
+.highlight .sx{color:#dd1144}
+.highlight .sr{color:#009926}
+.highlight .s1{color:#dd1144}
+.highlight .ss{color:#990073}
+.highlight .bp{color:#999999}
+.highlight .vc{color:teal}
+.highlight .vg{color:teal}
+.highlight .vi{color:teal}
+.highlight .il{color:#009999}
+.highlight .gc{color:#999;background-color:#EAF2F5}
 </style><title>commandes_linux</title></head><body><article class="markdown-body"><h1 id="commandes-linux">Commandes Linux<a class="headerlink" href="#commandes-linux" title="Permanent link"></a></h1>
 <p><a href="https://doc.ubuntu-fr.org/tutoriel/console_commandes_de_base" title="Doc Ubuntu - Commandes de base">Doc Ubuntu - Commandes de base</a></p>
 <p><strong>Sommaire</strong></p>
@@ -1066,86 +1074,86 @@ body .markdown-body
 </ul>
 <h2 id="commandes-courantes">Commandes courantes<a class="headerlink" href="#commandes-courantes" title="Permanent link"></a></h2>
 <h3 id="nettoyer-le-terminal">Nettoyer le terminal<a class="headerlink" href="#nettoyer-le-terminal" title="Permanent link"></a></h3>
-<div class="codehilite"><pre>Ctrl + L (ou clear)
+<div class="highlight"><pre>Ctrl + L (ou clear)
 </pre></div>
 
 <h3 id="afficher-laide-dune-commande">Afficher l&rsquo;aide d&rsquo;une commande<a class="headerlink" href="#afficher-laide-dune-commande" title="Permanent link"></a></h3>
-<div class="codehilite"><pre>man &lt;commande&gt;
+<div class="highlight"><pre>man &lt;commande&gt;
 </pre></div>
 
 <h3 id="afficher-lhistorique-des-commandes-lancees">Afficher l&rsquo;historique des commandes lancées<a class="headerlink" href="#afficher-lhistorique-des-commandes-lancees" title="Permanent link"></a></h3>
-<div class="codehilite"><pre>history
+<div class="highlight"><pre>history
 history 20                          # Affiche les 20 dernières commandes
 history | grep -i &lt;search&gt; | less   # Affiche les 10 dernières commandes filtrées sur un mot clé
 </pre></div>
 
 <h3 id="recherche-dans-lhistorique">Recherche dans l&rsquo;historique<a class="headerlink" href="#recherche-dans-lhistorique" title="Permanent link"></a></h3>
-<div class="codehilite"><pre>Ctrl + R
+<div class="highlight"><pre>Ctrl + R
 </pre></div>
 
 <h3 id="afficher-le-repertoire-courant">Afficher le répertoire courant<a class="headerlink" href="#afficher-le-repertoire-courant" title="Permanent link"></a></h3>
-<div class="codehilite"><pre>pwd
+<div class="highlight"><pre>pwd
 </pre></div>
 
 <h3 id="afficher-le-repertoire-courant_1">Afficher le répertoire courant<a class="headerlink" href="#afficher-le-repertoire-courant_1" title="Permanent link"></a></h3>
-<div class="codehilite"><pre>ls
+<div class="highlight"><pre>ls
 ls -l       # Affiche les détails pour chaque fichier
 ls -a       # Affiche les fichiers cachés
 </pre></div>
 
 <h3 id="afficher-la-hierarchie-du-repertoire-courant">Afficher la hiérarchie du répertoire courant<a class="headerlink" href="#afficher-la-hierarchie-du-repertoire-courant" title="Permanent link"></a></h3>
-<div class="codehilite"><pre>tree        # Affiche les sous-répertoires et les fichiers qui s&#39;y trouvent
+<div class="highlight"><pre>tree        # Affiche les sous-répertoires et les fichiers qui s&#39;y trouvent
 tree -d     # Affiche les répertoires uniquement
 </pre></div>
 
-<div class="codehilite"><pre>Avec l&#39;option -l, le premier caractère indique :
+<div class="highlight"><pre>Avec l&#39;option -l, le premier caractère indique :
 - : fichier classique
 d : répertoire
 l : lien symbolique
 </pre></div>
 
 <h3 id="changer-de-repertoire">Changer de répertoire<a class="headerlink" href="#changer-de-repertoire" title="Permanent link"></a></h3>
-<div class="codehilite"><pre>cd &lt;directory&gt;
+<div class="highlight"><pre>cd &lt;directory&gt;
 </pre></div>
 
 <h3 id="creer-un-repertoire">Créer un répertoire<a class="headerlink" href="#creer-un-repertoire" title="Permanent link"></a></h3>
-<div class="codehilite"><pre>mkdir &lt;directory&gt;
+<div class="highlight"><pre>mkdir &lt;directory&gt;
 </pre></div>
 
 <h3 id="supprimer-un-repertoire">Supprimer un répertoire<a class="headerlink" href="#supprimer-un-repertoire" title="Permanent link"></a></h3>
-<p><div class="codehilite"><pre>rmdir &lt;directory&gt;
+<p><div class="highlight"><pre>rmdir &lt;directory&gt;
 </pre></div>
 <code>-rf</code> force la suppression d&rsquo;un répertoire non vide</p>
 <h3 id="creer-un-fichier">Créer un fichier<a class="headerlink" href="#creer-un-fichier" title="Permanent link"></a></h3>
-<div class="codehilite"><pre>touch &lt;filename&gt;
+<div class="highlight"><pre>touch &lt;filename&gt;
 </pre></div>
 
 <h3 id="copier-un-fichier-ou-un-repertoire">Copier un fichier ou un répertoire<a class="headerlink" href="#copier-un-fichier-ou-un-repertoire" title="Permanent link"></a></h3>
-<div class="codehilite"><pre>cp &lt;old_name&gt; &lt;new_name&gt;
+<div class="highlight"><pre>cp &lt;old_name&gt; &lt;new_name&gt;
 </pre></div>
 
 <h3 id="renommer-un-fichier">Renommer un fichier<a class="headerlink" href="#renommer-un-fichier" title="Permanent link"></a></h3>
-<div class="codehilite"><pre>mv &lt;old_name&gt; &lt;new_name&gt;
+<div class="highlight"><pre>mv &lt;old_name&gt; &lt;new_name&gt;
 </pre></div>
 
 <h3 id="supprimer-un-fichier">Supprimer un fichier<a class="headerlink" href="#supprimer-un-fichier" title="Permanent link"></a></h3>
-<p><div class="codehilite"><pre>rm -f &lt;filename|directory&gt;
+<p><div class="highlight"><pre>rm -f &lt;filename|directory&gt;
 </pre></div>
 <code>-f</code> force la suppression</p>
 <h3 id="afficher-le-contenu-dun-fichier">Afficher le contenu d&rsquo;un fichier<a class="headerlink" href="#afficher-le-contenu-dun-fichier" title="Permanent link"></a></h3>
-<div class="codehilite"><pre>cat &lt;filename&gt;          # Affiche tout le fichier
+<div class="highlight"><pre>cat &lt;filename&gt;          # Affiche tout le fichier
 tail &lt;filename&gt;         # Affiche les 10 dernières lignes d&#39;un fichier
 tail -20 &lt;filename&gt;     # Affiche les 20 dernières lignes d&#39;un fichier
 tail -f &lt;filename&gt;      # Affiche les 10 dernières lignes d&#39;un fichier puis les lignes suivantes automatiquement lorsque le fichier est modifié
 </pre></div>
 
 <h3 id="enregistrer-la-sortie-dune-commande-dans-un-fichier">Enregistrer la sortie d&rsquo;une commande dans un fichier<a class="headerlink" href="#enregistrer-la-sortie-dune-commande-dans-un-fichier" title="Permanent link"></a></h3>
-<div class="codehilite"><pre>cat filename &gt; other_filename       # Ecrase le contenu
+<div class="highlight"><pre>cat filename &gt; other_filename       # Ecrase le contenu
 cat filename &gt;&gt; other_filename      # Ajoute le contenu à la fin du fichier
 </pre></div>
 
 <h3 id="localiser-un-fichier">Localiser un fichier<a class="headerlink" href="#localiser-un-fichier" title="Permanent link"></a></h3>
-<div class="codehilite"><pre>locate &lt;filename&gt;
+<div class="highlight"><pre>locate &lt;filename&gt;
 </pre></div>
 
 <p><br><br></p>
@@ -1153,16 +1161,16 @@ cat filename &gt;&gt; other_filename      # Ajoute le contenu à la fin du fichi
 <p><a href="https://doc.ubuntu-fr.org/droits" title="Doc Ubuntu - Droits">Doc Ubuntu - Droits</a>
 <a href="https://doc.ubuntu-fr.org/permissions" title="Doc Ubuntu - Permissions">Doc Ubuntu - Permissions</a></p>
 <h3 id="visualiser-les-droits-des-fichiers-dun-repertoire">Visualiser les droits des fichiers d&rsquo;un répertoire<a class="headerlink" href="#visualiser-les-droits-des-fichiers-dun-repertoire" title="Permanent link"></a></h3>
-<div class="codehilite"><pre>ls -l &lt;directory&gt;
+<div class="highlight"><pre>ls -l &lt;directory&gt;
 </pre></div>
 
 <p><strong><em>Exemple</em></strong>
-<div class="codehilite"><pre>drwxrwx---+ 2 loic.pascal utilisateurs du domaine 4096 févr. 26 16:16
+<div class="highlight"><pre>drwxrwx---+ 2 loic.pascal utilisateurs du domaine 4096 févr. 26 16:16
 -rwxrwxr--+ 1 loic.pascal utilisateurs du domaine 1160 févr. 26 15:56 participationBO.js
 </pre></div></p>
 <p>Le <code>d</code> en début de ligne signifie qu&rsquo;il s&rsquo;agit d&rsquo;un répertoire.<br />
 Le <code>l</code> en début de ligne signifie qu&rsquo;il s&rsquo;agit d&rsquo;un lien.  </p>
-<div class="codehilite"><pre>1er groupe  : -rwx------ Propriétaire
+<div class="highlight"><pre>1er groupe  : -rwx------ Propriétaire
 2ème groupe : ----rwx--- Groupe
 3ème groupe : -------rwx Public (autres utilisateurs)
 
@@ -1199,16 +1207,16 @@ x = execute (executer)
 <li>x : execute ⇒ exécution</li>
 <li>X : eXecute ⇒ exécution, concerne uniquement les répertoires</li>
 </ul>
-<div class="codehilite"><pre>chmod o-w &lt;filename&gt;        # Supprime le droit d&#39;écriture pour les autres
+<div class="highlight"><pre>chmod o-w &lt;filename&gt;        # Supprime le droit d&#39;écriture pour les autres
 chmod a+x &lt;filename&gt;        # Ajoute le droit d&#39;éxecution à tout le monde
 chmod a+rx,g-w &lt;filename&gt;   # Ajoute le droit de lecture et d&#39;éxecution à tout le monde et supprime le droit d&#39;écriture au groupe
 </pre></div>
 
 <p><strong><em>Avec chmod en octal</em></strong>
-<div class="codehilite"><pre>chmod 755 &lt;filename&gt;        # Pour un fichier
+<div class="highlight"><pre>chmod 755 &lt;filename&gt;        # Pour un fichier
 chmod -R 755 &lt;directory&gt;    # Pour un répertoire
 </pre></div></p>
-<div class="codehilite"><pre>&quot;4&quot; pour le droit de lecture (read)
+<div class="highlight"><pre>&quot;4&quot; pour le droit de lecture (read)
 &quot;2&quot; pour le droit d&#39;écriture (write)
 &quot;1&quot; pour le droit d&#39;exécution (execute)
 
@@ -1226,50 +1234,50 @@ Donc :
 
 <h3 id="modifier-le-proprietaire-et-le-groupe-dun-fichier">Modifier le propriétaire et le groupe d&rsquo;un fichier<a class="headerlink" href="#modifier-le-proprietaire-et-le-groupe-dun-fichier" title="Permanent link"></a></h3>
 <p>Il faut être root pour pouvoir faire ce changement.
-<div class="codehilite"><pre>sudo chown &lt;user&gt; &lt;file|directory&gt;               # Modifie l&#39;utilisateur uniquement
+<div class="highlight"><pre>sudo chown &lt;user&gt; &lt;file|directory&gt;               # Modifie l&#39;utilisateur uniquement
 sudo chgrp &lt;group&gt; &lt;file|directory&gt;              # Modifie le groupe uniquement
 sudo chown &lt;user&gt;:&lt;group&gt; &lt;file|directory&gt;       # Modifie l&#39;utilisateur et le groupe
 sudo chown -R &lt;user&gt;:&lt;group&gt; &lt;directory&gt;         # Récursif
 </pre></div></p>
 <h3 id="lister-les-groupes-de-lutilisateur-connecte">Lister les groupes de l&rsquo;utilisateur connecté<a class="headerlink" href="#lister-les-groupes-de-lutilisateur-connecte" title="Permanent link"></a></h3>
 <p>Le premier groupe de la liste de résultats est le groupe principal de l&rsquo;utilisateur
-<div class="codehilite"><pre>groups
+<div class="highlight"><pre>groups
 </pre></div></p>
 <h3 id="lister-les-groupes-dun-utilisateur">Lister les groupes d&rsquo;un utilisateur<a class="headerlink" href="#lister-les-groupes-dun-utilisateur" title="Permanent link"></a></h3>
-<div class="codehilite"><pre>groups &lt;username&gt;
+<div class="highlight"><pre>groups &lt;username&gt;
 </pre></div>
 
 <h3 id="lister-les-membres-dun-groupe">Lister les membres d&rsquo;un groupe<a class="headerlink" href="#lister-les-membres-dun-groupe" title="Permanent link"></a></h3>
-<div class="codehilite"><pre>getent group &lt;groupname&gt;
+<div class="highlight"><pre>getent group &lt;groupname&gt;
 </pre></div>
 
 <h3 id="lister-tous-les-groupes">Lister tous les groupes<a class="headerlink" href="#lister-tous-les-groupes" title="Permanent link"></a></h3>
-<div class="codehilite"><pre>less /etc/group
+<div class="highlight"><pre>less /etc/group
 </pre></div>
 
 <p><br><br></p>
 <h2 id="crontab">Crontab<a class="headerlink" href="#crontab" title="Permanent link"></a></h2>
 <h3 id="afficher-la-crontab">Afficher la crontab<a class="headerlink" href="#afficher-la-crontab" title="Permanent link"></a></h3>
-<div class="codehilite"><pre>crontab -l
+<div class="highlight"><pre>crontab -l
 </pre></div>
 
 <h3 id="exporter-la-crontab-dans-un-fichier">Exporter la crontab dans un fichier<a class="headerlink" href="#exporter-la-crontab-dans-un-fichier" title="Permanent link"></a></h3>
-<div class="codehilite"><pre>crontab -l &gt; mon_fichier
+<div class="highlight"><pre>crontab -l &gt; mon_fichier
 </pre></div>
 
 <h3 id="editer-la-crontab-avec-vim">Editer la crontab (avec vim)<a class="headerlink" href="#editer-la-crontab-avec-vim" title="Permanent link"></a></h3>
-<div class="codehilite"><pre>crontab -e
+<div class="highlight"><pre>crontab -e
 </pre></div>
 
 <p><br><br></p>
 <h2 id="vim">Vim<a class="headerlink" href="#vim" title="Permanent link"></a></h2>
 <h3 id="changer-de-mode">Changer de mode<a class="headerlink" href="#changer-de-mode" title="Permanent link"></a></h3>
-<div class="codehilite"><pre>i           # Passer en mode édition/insertion
+<div class="highlight"><pre>i           # Passer en mode édition/insertion
 Escp        # Passer en mode commande
 </pre></div>
 
 <h3 id="enregistrer-et-quitter">Enregistrer et quitter<a class="headerlink" href="#enregistrer-et-quitter" title="Permanent link"></a></h3>
-<div class="codehilite"><pre>:w                          # Enregistrer sans quitter
+<div class="highlight"><pre>:w                          # Enregistrer sans quitter
 :w &lt;chemin vers fichier&gt;    # Enregistrer sous
 :x ou :wq                   # Enregistrer et quitter
 :q                          # Quitter
@@ -1277,25 +1285,25 @@ Escp        # Passer en mode commande
 </pre></div>
 
 <h3 id="se-deplacer-dans-le-fichier">Se déplacer dans le fichier<a class="headerlink" href="#se-deplacer-dans-le-fichier" title="Permanent link"></a></h3>
-<div class="codehilite"><pre>:1          # Aller à la première ligne
+<div class="highlight"><pre>:1          # Aller à la première ligne
 :10         # Aller à la ligne 10
 :$          # Aller à la fin du fichier
 $           # Placer le curseur à la fin d&#39;une ligne
 </pre></div>
 
 <h3 id="copier-couper-coller">Copier / couper / coller<a class="headerlink" href="#copier-couper-coller" title="Permanent link"></a></h3>
-<div class="codehilite"><pre>yy          # Copier une ligne
+<div class="highlight"><pre>yy          # Copier une ligne
 dd          # Couper ou supprimer une ligne
 p           # Coller
 </pre></div>
 
 <h3 id="annuler-refaire-une-action">Annuler / Refaire une action<a class="headerlink" href="#annuler-refaire-une-action" title="Permanent link"></a></h3>
-<div class="codehilite"><pre>u           # Annuler
+<div class="highlight"><pre>u           # Annuler
 .           # Refaire une action
 </pre></div>
 
 <h3 id="rechercher">Rechercher<a class="headerlink" href="#rechercher" title="Permanent link"></a></h3>
-<div class="codehilite"><pre>/test       # Rechercher le mot &quot;test&quot;
+<div class="highlight"><pre>/test       # Rechercher le mot &quot;test&quot;
 ?test       # Rechercher le mot &quot;test&quot; vers le haut
 n           # Occurence suivante
 ? enter     # Occurence précédente
