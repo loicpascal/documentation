@@ -5,6 +5,7 @@
 
 * [Commandes courantes](#commandes-courantes)
 * [Droits](#droits)
+* [SSH](#ssh)
 * [Crontab](#crontab)
 * [Vim](#vim)
 
@@ -223,6 +224,34 @@ getent group <groupname>
 ###Lister tous les groupes
 ```
 less /etc/group
+```
+
+<br><br>
+
+##SSH
+
+[Doc SSH - Commandes](https://www.ssh.com/ssh/command/ "Doc SSH - Commandes")
+
+###Se connecter à un serveur
+```
+ssh <hostname>
+```
+
+###Se connecter à un serveur en spécifiant un utilisateur
+```
+ssh <user>@<hostname>
+OU
+ssh -l <uer> <hostname>
+```
+
+###Executer une commande sur un serveur
+```
+ssh <hostname> <command>
+```
+
+***Exemple***
+```
+ssh sample.ssh.com  ls /tmp/doc
 ```
 
 <br><br>

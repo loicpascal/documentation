@@ -1069,6 +1069,7 @@ body .markdown-body
 <ul>
 <li><a href="#commandes-courantes">Commandes courantes</a></li>
 <li><a href="#droits">Droits</a></li>
+<li><a href="#ssh">SSH</a></li>
 <li><a href="#crontab">Crontab</a></li>
 <li><a href="#vim">Vim</a></li>
 </ul>
@@ -1255,6 +1256,26 @@ sudo chown -R &lt;user&gt;:&lt;group&gt; &lt;directory&gt;         # Récursif
 <div class="highlight"><pre>less /etc/group
 </pre></div>
 
+<p><br><br></p>
+<h2 id="ssh">SSH<a class="headerlink" href="#ssh" title="Permanent link"></a></h2>
+<p><a href="https://www.ssh.com/ssh/command/" title="Doc SSH - Commandes">Doc SSH - Commandes</a></p>
+<h3 id="se-connecter-a-un-serveur">Se connecter à un serveur<a class="headerlink" href="#se-connecter-a-un-serveur" title="Permanent link"></a></h3>
+<div class="highlight"><pre>ssh &lt;hostname&gt;
+</pre></div>
+
+<h3 id="se-connecter-a-un-serveur-en-specifiant-un-utilisateur">Se connecter à un serveur en spécifiant un utilisateur<a class="headerlink" href="#se-connecter-a-un-serveur-en-specifiant-un-utilisateur" title="Permanent link"></a></h3>
+<div class="highlight"><pre>ssh &lt;user&gt;@&lt;hostname&gt;
+OU
+ssh -l &lt;uer&gt; &lt;hostname&gt;
+</pre></div>
+
+<h3 id="executer-une-commande-sur-un-serveur">Executer une commande sur un serveur<a class="headerlink" href="#executer-une-commande-sur-un-serveur" title="Permanent link"></a></h3>
+<div class="highlight"><pre>ssh &lt;hostname&gt; &lt;command&gt;
+</pre></div>
+
+<p><strong><em>Exemple</em></strong>
+<div class="highlight"><pre>ssh sample.ssh.com  ls /tmp/doc
+</pre></div></p>
 <p><br><br></p>
 <h2 id="crontab">Crontab<a class="headerlink" href="#crontab" title="Permanent link"></a></h2>
 <h3 id="afficher-la-crontab">Afficher la crontab<a class="headerlink" href="#afficher-la-crontab" title="Permanent link"></a></h3>
