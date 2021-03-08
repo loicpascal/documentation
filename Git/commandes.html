@@ -118,23 +118,28 @@ body .markdown-body
   padding: 0;
 }
 
-.markdown-body .codehilitetable {
+.markdown-body .codehilitetable,
+.markdown-body .highlighttable {
   border: 0;
   border-spacing: 0;
 }
 
-.markdown-body .codehilitetable tr {
+.markdown-body .codehilitetable tr,
+.markdown-body .highlighttable {
   border: 0;
 }
 
 .markdown-body .codehilitetable pre,
-.markdown-body .codehilitetable div.codehilite {
+.markdown-body .codehilitetable div.codehilite,
+.markdown-body .highlighttable pre,
+.markdown-body .highlighttable div.highlight {
   margin: 0;
 }
 
 .markdown-body .linenos,
 .markdown-body .code,
-.markdown-body .codehilitetable td {
+.markdown-body .codehilitetable td,
+.markdown-body .highlighttable td {
   border: 0;
   padding: 0;
 }
@@ -517,11 +522,13 @@ body .markdown-body
   border: 0;
 }
 
-.markdown-body .codehilite {
+.markdown-body .codehilite,
+.markdown-body .highlight {
   margin-bottom: 16px;
 }
 
 .markdown-body .codehilite pre,
+.markdown-body .highlight pre,
 .markdown-body pre {
   padding: 16px;
   overflow: auto;
@@ -531,7 +538,8 @@ body .markdown-body
   border-radius: 3px;
 }
 
-.markdown-body .codehilite pre {
+.markdown-body .codehilite pre,
+.markdown-body .highlight pre {
   margin-bottom: 0;
   word-break: normal;
 }
@@ -993,68 +1001,68 @@ body .markdown-body
   }
 }
 </style><style>/*GitHub*/
-.codehilite {background-color:#fff;color:#333333;}
-.codehilite .hll {background-color:#ffffcc;}
-.codehilite .c{color:#999988;font-style:italic}
-.codehilite .err{color:#a61717;background-color:#e3d2d2}
-.codehilite .k{font-weight:bold}
-.codehilite .o{font-weight:bold}
-.codehilite .cm{color:#999988;font-style:italic}
-.codehilite .cp{color:#999999;font-weight:bold}
-.codehilite .c1{color:#999988;font-style:italic}
-.codehilite .cs{color:#999999;font-weight:bold;font-style:italic}
-.codehilite .gd{color:#000000;background-color:#ffdddd}
-.codehilite .ge{font-style:italic}
-.codehilite .gr{color:#aa0000}
-.codehilite .gh{color:#999999}
-.codehilite .gi{color:#000000;background-color:#ddffdd}
-.codehilite .go{color:#888888}
-.codehilite .gp{color:#555555}
-.codehilite .gs{font-weight:bold}
-.codehilite .gu{color:#800080;font-weight:bold}
-.codehilite .gt{color:#aa0000}
-.codehilite .kc{font-weight:bold}
-.codehilite .kd{font-weight:bold}
-.codehilite .kn{font-weight:bold}
-.codehilite .kp{font-weight:bold}
-.codehilite .kr{font-weight:bold}
-.codehilite .kt{color:#445588;font-weight:bold}
-.codehilite .m{color:#009999}
-.codehilite .s{color:#dd1144}
-.codehilite .n{color:#333333}
-.codehilite .na{color:teal}
-.codehilite .nb{color:#0086b3}
-.codehilite .nc{color:#445588;font-weight:bold}
-.codehilite .no{color:teal}
-.codehilite .ni{color:purple}
-.codehilite .ne{color:#990000;font-weight:bold}
-.codehilite .nf{color:#990000;font-weight:bold}
-.codehilite .nn{color:#555555}
-.codehilite .nt{color:navy}
-.codehilite .nv{color:teal}
-.codehilite .ow{font-weight:bold}
-.codehilite .w{color:#bbbbbb}
-.codehilite .mf{color:#009999}
-.codehilite .mh{color:#009999}
-.codehilite .mi{color:#009999}
-.codehilite .mo{color:#009999}
-.codehilite .sb{color:#dd1144}
-.codehilite .sc{color:#dd1144}
-.codehilite .sd{color:#dd1144}
-.codehilite .s2{color:#dd1144}
-.codehilite .se{color:#dd1144}
-.codehilite .sh{color:#dd1144}
-.codehilite .si{color:#dd1144}
-.codehilite .sx{color:#dd1144}
-.codehilite .sr{color:#009926}
-.codehilite .s1{color:#dd1144}
-.codehilite .ss{color:#990073}
-.codehilite .bp{color:#999999}
-.codehilite .vc{color:teal}
-.codehilite .vg{color:teal}
-.codehilite .vi{color:teal}
-.codehilite .il{color:#009999}
-.codehilite .gc{color:#999;background-color:#EAF2F5}
+.highlight {background-color:#fff;color:#333333;}
+.highlight .hll {background-color:#ffffcc;}
+.highlight .c{color:#999988;font-style:italic}
+.highlight .err{color:#a61717;background-color:#e3d2d2}
+.highlight .k{font-weight:bold}
+.highlight .o{font-weight:bold}
+.highlight .cm{color:#999988;font-style:italic}
+.highlight .cp{color:#999999;font-weight:bold}
+.highlight .c1{color:#999988;font-style:italic}
+.highlight .cs{color:#999999;font-weight:bold;font-style:italic}
+.highlight .gd{color:#000000;background-color:#ffdddd}
+.highlight .ge{font-style:italic}
+.highlight .gr{color:#aa0000}
+.highlight .gh{color:#999999}
+.highlight .gi{color:#000000;background-color:#ddffdd}
+.highlight .go{color:#888888}
+.highlight .gp{color:#555555}
+.highlight .gs{font-weight:bold}
+.highlight .gu{color:#800080;font-weight:bold}
+.highlight .gt{color:#aa0000}
+.highlight .kc{font-weight:bold}
+.highlight .kd{font-weight:bold}
+.highlight .kn{font-weight:bold}
+.highlight .kp{font-weight:bold}
+.highlight .kr{font-weight:bold}
+.highlight .kt{color:#445588;font-weight:bold}
+.highlight .m{color:#009999}
+.highlight .s{color:#dd1144}
+.highlight .n{color:#333333}
+.highlight .na{color:teal}
+.highlight .nb{color:#0086b3}
+.highlight .nc{color:#445588;font-weight:bold}
+.highlight .no{color:teal}
+.highlight .ni{color:purple}
+.highlight .ne{color:#990000;font-weight:bold}
+.highlight .nf{color:#990000;font-weight:bold}
+.highlight .nn{color:#555555}
+.highlight .nt{color:navy}
+.highlight .nv{color:teal}
+.highlight .ow{font-weight:bold}
+.highlight .w{color:#bbbbbb}
+.highlight .mf{color:#009999}
+.highlight .mh{color:#009999}
+.highlight .mi{color:#009999}
+.highlight .mo{color:#009999}
+.highlight .sb{color:#dd1144}
+.highlight .sc{color:#dd1144}
+.highlight .sd{color:#dd1144}
+.highlight .s2{color:#dd1144}
+.highlight .se{color:#dd1144}
+.highlight .sh{color:#dd1144}
+.highlight .si{color:#dd1144}
+.highlight .sx{color:#dd1144}
+.highlight .sr{color:#009926}
+.highlight .s1{color:#dd1144}
+.highlight .ss{color:#990073}
+.highlight .bp{color:#999999}
+.highlight .vc{color:teal}
+.highlight .vg{color:teal}
+.highlight .vi{color:teal}
+.highlight .il{color:#009999}
+.highlight .gc{color:#999;background-color:#EAF2F5}
 </style><title>commandes</title></head><body><article class="markdown-body"><p><a href="https://facelessuser.github.io/MarkdownPreview/usage/" title="MarkdownPreview">MarkdownPreview</a><br />
 <a href="https://fr.wikipedia.org/wiki/Markdown#Quelques_exemples" title="Markdown">Markdown</a></p>
 <h1 id="commandes-git">Commandes Git<a class="headerlink" href="#commandes-git" title="Permanent link"></a></h1>
@@ -1112,87 +1120,87 @@ body .markdown-body
 </ul>
 <h2 id="gerer-un-depot">Gérer un dépôt<a class="headerlink" href="#gerer-un-depot" title="Permanent link"></a></h2>
 <h3 id="aide-en-ligne-de-commande">Aide en ligne de commande<a class="headerlink" href="#aide-en-ligne-de-commande" title="Permanent link"></a></h3>
-<div class="codehilite"><pre>git help [nom_de_la_commande]
+<div class="highlight"><pre>git help [nom_de_la_commande]
 </pre></div>
 
 <h3 id="initialiser-un-nouveau-depot">Initialiser un nouveau dépôt<a class="headerlink" href="#initialiser-un-nouveau-depot" title="Permanent link"></a></h3>
-<div class="codehilite"><pre>git init
+<div class="highlight"><pre>git init
 </pre></div>
 
 <h3 id="cloner-un-depot">Cloner un dépôt<a class="headerlink" href="#cloner-un-depot" title="Permanent link"></a></h3>
-<div class="codehilite"><pre>git clone &lt;repo_url&gt;
+<div class="highlight"><pre>git clone &lt;repo_url&gt;
 </pre></div>
 
 <h3 id="configurer-un-depot">Configurer un dépôt<a class="headerlink" href="#configurer-un-depot" title="Permanent link"></a></h3>
 <p><strong>Configurer son mail</strong>
-<div class="codehilite"><pre>git config --global user.email &quot;your_email@example.com&quot;
+<div class="highlight"><pre>git config --global user.email &quot;your_email@example.com&quot;
 </pre></div>
 <strong>Configurer son éditeur de texte</strong>
-<div class="codehilite"><pre>git config --global core.editor &quot;vim&quot;
+<div class="highlight"><pre>git config --global core.editor &quot;vim&quot;
 </pre></div>
 <strong>Configurer ses alias</strong>
-<div class="codehilite"><pre>git config --global alias.co checkout
+<div class="highlight"><pre>git config --global alias.co checkout
 git config --global alias.br branch
 git config --global alias.ci commit
 git config --global alias.st status
 </pre></div>
 <strong>Lister les config globales</strong>
-<div class="codehilite"><pre>git config --list
+<div class="highlight"><pre>git config --list
 </pre></div></p>
 <p><br/><br/></p>
 <h2 id="enregistrer-des-changements">Enregistrer des changements<a class="headerlink" href="#enregistrer-des-changements" title="Permanent link"></a></h2>
 <h3 id="git-add">git add<a class="headerlink" href="#git-add" title="Permanent link"></a></h3>
 <p><strong>Ajouter un fichier à l&rsquo;index</strong>
-<div class="codehilite"><pre>git add &lt;file&gt;
+<div class="highlight"><pre>git add &lt;file&gt;
 </pre></div></p>
 <p><strong>Ajouter un répertoire à l&rsquo;index</strong>
-<div class="codehilite"><pre>git add &lt;directory&gt;
+<div class="highlight"><pre>git add &lt;directory&gt;
 </pre></div></p>
 <p><strong>Ajouter tous les fichiers à l&rsquo;index</strong>
-<div class="codehilite"><pre>git add .
+<div class="highlight"><pre>git add .
 </pre></div></p>
 <p><br/></p>
 <h3 id="git-commit">git commit<a class="headerlink" href="#git-commit" title="Permanent link"></a></h3>
 <p><strong>Faire un commit avec un message</strong>
-<div class="codehilite"><pre>git commit -m &quot;commit message&quot;
+<div class="highlight"><pre>git commit -m &quot;commit message&quot;
 </pre></div></p>
 <p><strong>Ajouter tous les fichiers déjà trackés et fais un commit avec un message</strong>
-<div class="codehilite"><pre>git commit -am &quot;commit message&quot;
+<div class="highlight"><pre>git commit -am &quot;commit message&quot;
 </pre></div></p>
 <p><strong>Modifier le message du dernier commit</strong>
-<div class="codehilite"><pre>git commit --amend
+<div class="highlight"><pre>git commit --amend
 </pre></div></p>
 <p><br/></p>
 <h3 id="git-diff">git diff<a class="headerlink" href="#git-diff" title="Permanent link"></a></h3>
 <p><strong>Voir les différences entre le contenu du répertoire de travail et celui de l&rsquo;index</strong>
-<div class="codehilite"><pre>git diff
+<div class="highlight"><pre>git diff
 </pre></div></p>
 <p><strong>Voir les différences entre le contenu de l&rsquo;index et celui du dernier commit</strong>
-<div class="codehilite"><pre>git diff --cached
+<div class="highlight"><pre>git diff --cached
 </pre></div></p>
 <p><strong>Voir les différences entre deux commits</strong>
-<div class="codehilite"><pre>git diff &lt;commit_1&gt; &lt;commit_2&gt;
+<div class="highlight"><pre>git diff &lt;commit_1&gt; &lt;commit_2&gt;
 </pre></div></p>
 <p><br/></p>
 <h3 id="git-stash">git stash<a class="headerlink" href="#git-stash" title="Permanent link"></a></h3>
 <p><strong>Mettre les changements de côté</strong>
-<div class="codehilite"><pre>git stash
+<div class="highlight"><pre>git stash
 git stash -u                            # Inclue les fichiers untracked
 git stash save &quot;WIP &lt;message&gt;&quot;          # Avec un message
 </pre></div></p>
 <p><strong>Lister les stashs enregistrés</strong>
-<div class="codehilite"><pre>git stash list
+<div class="highlight"><pre>git stash list
 </pre></div></p>
 <p><strong>Réintégrer le dernier stash dans le répertoire de travail et dans l&rsquo;index</strong>
-<div class="codehilite"><pre>git stash apply
+<div class="highlight"><pre>git stash apply
 git stash pop                           # Et supprime le stash
 git stash apply|pop stash@{0}           # Un stash en particulier
 </pre></div></p>
 <p><strong>Visualiser le contenu d&rsquo;un stash</strong>
-<div class="codehilite"><pre>git stash show stash@{0}
+<div class="highlight"><pre>git stash show stash@{0}
 </pre></div></p>
 <p><strong>Supprimer les stashs</strong>
-<div class="codehilite"><pre>git stash clear
+<div class="highlight"><pre>git stash clear
 git stash drop stash@{0}                # Un stash en particulier
 </pre></div></p>
 <p><br/></p>
@@ -1202,12 +1210,12 @@ git stash drop stash@{0}                # Un stash en particulier
 <h2 id="inspecter-un-depot">Inspecter un dépôt<a class="headerlink" href="#inspecter-un-depot" title="Permanent link"></a></h2>
 <h3 id="git-status">git status<a class="headerlink" href="#git-status" title="Permanent link"></a></h3>
 <p><strong>Afficher l&rsquo;état des fichiers</strong>
-<div class="codehilite"><pre>git status
+<div class="highlight"><pre>git status
 </pre></div></p>
 <p><br/></p>
 <h3 id="git-log">git log<a class="headerlink" href="#git-log" title="Permanent link"></a></h3>
 <p><strong>Afficher la liste des commits</strong>
-<div class="codehilite"><pre>git logs                                # Tous les commits
+<div class="highlight"><pre>git logs                                # Tous les commits
 git logs -3                             # Les 3 derniers commits
 git logs --oneline                      # Chaque commit sur une seule ligne
 git logs --stat                         # Pour chaque commit quels fichiers ont été modifiés
@@ -1220,67 +1228,67 @@ git log --graph --decorate --oneline    # Sous forme de graph
 <p><br/></p>
 <h3 id="git-blame">git blame<a class="headerlink" href="#git-blame" title="Permanent link"></a></h3>
 <p><strong>Afficher qui a modifié quoi</strong>
-<div class="codehilite"><pre>git blame &lt;fichier&gt;
+<div class="highlight"><pre>git blame &lt;fichier&gt;
 git blame -L 1,5 README.md              # Restreindre sur un ensemble de lignes
 </pre></div></p>
 <p><br/></p>
 <h3 id="git-show">git show<a class="headerlink" href="#git-show" title="Permanent link"></a></h3>
 <p><strong>Voir le contenu exact d&rsquo;un commit</strong></p>
-<div class="codehilite"><pre>git show &lt;commit&gt;
+<div class="highlight"><pre>git show &lt;commit&gt;
 </pre></div>
 
 <p><strong>Voir le contenu exact d&rsquo;un commit pour un fichier donné</strong></p>
-<div class="codehilite"><pre>git show &lt;commit&gt; &lt;nom_du_fichier&gt;
+<div class="highlight"><pre>git show &lt;commit&gt; &lt;nom_du_fichier&gt;
 </pre></div>
 
 <p><br/><br/></p>
 <h2 id="annuler-des-changements">Annuler des changements<a class="headerlink" href="#annuler-des-changements" title="Permanent link"></a></h2>
 <h3 id="git-reset">git reset<a class="headerlink" href="#git-reset" title="Permanent link"></a></h3>
 <p><strong>Annuler le dernier commit</strong>
-<div class="codehilite"><pre>git reset HEAD^                         # Revient à revenir à l&#39;avant-dernier commit
+<div class="highlight"><pre>git reset HEAD^                         # Revient à revenir à l&#39;avant-dernier commit
 
 OU
 
 git reset HEAD~1
 </pre></div></p>
 <p><strong>Revenir à l&rsquo;avant-avant-dernier commit</strong>
-<div class="codehilite"><pre>git reset HEAD^^
+<div class="highlight"><pre>git reset HEAD^^
 
 OU
 
 git reset HEAD~2
 </pre></div></p>
 <p><strong>Revenir à un commit précis</strong>
-<div class="codehilite"><pre>git reset d6d9892
+<div class="highlight"><pre>git reset d6d9892
 </pre></div></p>
 <p>Avec un <code>reset HEAD</code>, seuls les commit sont supprimés. Les modifications elles, restent en place.</p>
 <p><strong>Annuler tous les changements du dernier commit</strong>
-<div class="codehilite"><pre>git reset --hard HEAD^
+<div class="highlight"><pre>git reset --hard HEAD^
 </pre></div></p>
 <p><strong>Annuler tous les changements sur le dépôt local</strong>
-<div class="codehilite"><pre>git reset --hard
+<div class="highlight"><pre>git reset --hard
 </pre></div></p>
 <p><strong>Remettre l&rsquo;état d&rsquo;une branche locale dans le même état que sur le dépôt distant (forcer)</strong>
-<div class="codehilite"><pre>git reset --hard origin/&lt;branch&gt;
+<div class="highlight"><pre>git reset --hard origin/&lt;branch&gt;
 </pre></div>
 Attention, supprime les changements locaux et les commits non pushed</p>
 <h3 id="git-checkout">git checkout<a class="headerlink" href="#git-checkout" title="Permanent link"></a></h3>
 <p><strong>Annuler les modifications d&rsquo;un fichier avant un commit</strong>
-<div class="codehilite"><pre>git checkout &lt;nom_fichier&gt;
+<div class="highlight"><pre>git checkout &lt;nom_fichier&gt;
 </pre></div></p>
 <h3 id="git-revert">git revert<a class="headerlink" href="#git-revert" title="Permanent link"></a></h3>
 <p><strong>Annuler un commit en créant un nouveau commit contenant les changements inverses</strong>
-<div class="codehilite"><pre>git revert &lt;commit&gt;
+<div class="highlight"><pre>git revert &lt;commit&gt;
 </pre></div></p>
 <p><br/><br/></p>
 <h2 id="reecrire-lhistorique">Réécrire l&rsquo;historique<a class="headerlink" href="#reecrire-lhistorique" title="Permanent link"></a></h2>
 <h3 id="git-commit_1">git commit<a class="headerlink" href="#git-commit_1" title="Permanent link"></a></h3>
 <p><strong>Changer le dernier commit</strong>
-<div class="codehilite"><pre>git commit --amend -m &quot;mon nouveau message&quot;
+<div class="highlight"><pre>git commit --amend -m &quot;mon nouveau message&quot;
 </pre></div></p>
 <h3 id="git-cherry-pick">git cherry-pick<a class="headerlink" href="#git-cherry-pick" title="Permanent link"></a></h3>
 <p><strong>Appliquer un commit à la branche courante</strong>
-<div class="codehilite"><pre>git cherry-pick &lt;commit&gt;
+<div class="highlight"><pre>git cherry-pick &lt;commit&gt;
 </pre></div></p>
 <p>L&rsquo;option <code>-edit</code> permet de saisir un message pour le commit<br />
 L&rsquo;option <code>--no-commit</code> applique seulement les modifications sans créer un nouveau commit</p>
@@ -1288,42 +1296,42 @@ L&rsquo;option <code>--no-commit</code> applique seulement les modifications san
 <h2 id="gestion-des-branches">Gestion des branches<a class="headerlink" href="#gestion-des-branches" title="Permanent link"></a></h2>
 <h3 id="creer-une-nouvelle-branche">Créer une nouvelle branche<a class="headerlink" href="#creer-une-nouvelle-branche" title="Permanent link"></a></h3>
 <p><strong>Créer une branche simple</strong>
-<div class="codehilite"><pre>git checkout &lt;branch&gt; &lt;source_branch&gt;
+<div class="highlight"><pre>git checkout &lt;branch&gt; &lt;source_branch&gt;
 </pre></div></p>
 <p><strong>Créer une branche et passer dessus</strong>
-<div class="codehilite"><pre>git checkout -b &lt;branch&gt; &lt;source_branch&gt;
+<div class="highlight"><pre>git checkout -b &lt;branch&gt; &lt;source_branch&gt;
 </pre></div></p>
 <h3 id="pousser-une-nouvelle-branche-sur-le-serveur">Pousser une nouvelle branche sur le serveur<a class="headerlink" href="#pousser-une-nouvelle-branche-sur-le-serveur" title="Permanent link"></a></h3>
-<p><div class="codehilite"><pre>git push -u origin &lt;branch&gt;
+<p><div class="highlight"><pre>git push -u origin &lt;branch&gt;
 </pre></div>
 <code>-u</code> est le raccourci pour <code>--set-upstream</code></p>
 <h3 id="changer-de-branche">Changer de branche<a class="headerlink" href="#changer-de-branche" title="Permanent link"></a></h3>
-<div class="codehilite"><pre>git checkout &lt;branch&gt;
+<div class="highlight"><pre>git checkout &lt;branch&gt;
 </pre></div>
 
 <h3 id="mettre-a-jour-la-branche">Mettre à jour la branche<a class="headerlink" href="#mettre-a-jour-la-branche" title="Permanent link"></a></h3>
 <p>Se placer sur la branche avec <code>git checkout &lt;branch&gt;</code> puis executer la commande suivante.</p>
-<div class="codehilite"><pre>git pull
+<div class="highlight"><pre>git pull
 </pre></div>
 
 <h3 id="lister-les-branches">Lister les branches<a class="headerlink" href="#lister-les-branches" title="Permanent link"></a></h3>
 <p><strong>Du dépôt local</strong>
-<div class="codehilite"><pre>git branch
+<div class="highlight"><pre>git branch
 </pre></div></p>
 <p><strong>Du dépôt distant</strong></p>
-<div class="codehilite"><pre>git branch -r
+<div class="highlight"><pre>git branch -r
 </pre></div>
 
 <h3 id="supprimer-une-branche">Supprimer une branche<a class="headerlink" href="#supprimer-une-branche" title="Permanent link"></a></h3>
-<div class="codehilite"><pre>git branch -D &lt;branch&gt;
+<div class="highlight"><pre>git branch -D &lt;branch&gt;
 </pre></div>
 
 <h3 id="trouver-la-branche-qui-contient-un-commit-specifique">Trouver la branche qui contient un commit spécifique<a class="headerlink" href="#trouver-la-branche-qui-contient-un-commit-specifique" title="Permanent link"></a></h3>
-<div class="codehilite"><pre>git branch -a --contains &lt;commits&gt;
+<div class="highlight"><pre>git branch -a --contains &lt;commits&gt;
 </pre></div>
 
 <h3 id="merger-une-branche-a-dans-une-branche-b">Merger une branche A dans une branche B<a class="headerlink" href="#merger-une-branche-a-dans-une-branche-b" title="Permanent link"></a></h3>
-<div class="codehilite"><pre>git co &lt;branch-B&gt;           # Se rendre sur la branche cible
+<div class="highlight"><pre>git co &lt;branch-B&gt;           # Se rendre sur la branche cible
 git pull                    # S&#39;assurer que la branche cible est à jour
 git merge &lt;branch-A&gt;        # Merger la branche A dans la branche B
 </pre></div>
@@ -1331,15 +1339,15 @@ git merge &lt;branch-A&gt;        # Merger la branche A dans la branche B
 <p><br/><br/></p>
 <h2 id="commandes-eolas">Commandes EOLAS<a class="headerlink" href="#commandes-eolas" title="Permanent link"></a></h2>
 <h3 id="supprimer-toutes-les-branches-de-suivi-fusionnees-qui-ont-ete-supprimees-sur-le-distant">Supprimer toutes les branches de suivi fusionnées qui ont été supprimées sur le distant<a class="headerlink" href="#supprimer-toutes-les-branches-de-suivi-fusionnees-qui-ont-ete-supprimees-sur-le-distant" title="Permanent link"></a></h3>
-<p><div class="codehilite"><pre>git branch-cleanup
+<p><div class="highlight"><pre>git branch-cleanup
 </pre></div>
 Alias de <code>git fetch -p &amp;&amp; LANG=en_US git branch -vv --merged | awk '/: gone]/{print $1}' | xargs -rn 1 git branch -d</code></p>
 <h3 id="forcer-la-suppression-de-toutes-les-branches-de-suivi-locales-qui-ont-ete-supprimees-sur-le-distant">Forcer la suppression de toutes les branches de suivi locales qui ont été supprimées sur le distant<a class="headerlink" href="#forcer-la-suppression-de-toutes-les-branches-de-suivi-locales-qui-ont-ete-supprimees-sur-le-distant" title="Permanent link"></a></h3>
-<p><div class="codehilite"><pre>git branch-cleanup-force
+<p><div class="highlight"><pre>git branch-cleanup-force
 </pre></div>
 Alias de <code>git fetch -p &amp;&amp; LANG=en_US git branch -vv | awk '/: gone]/{print $1}' | xargs -rn 1 git branch -D</code></p>
 <h3 id="rebaser-une-branche-fille-depuis-sa-branche-mere">Rebaser une branche fille depuis sa branche mère<a class="headerlink" href="#rebaser-une-branche-fille-depuis-sa-branche-mere" title="Permanent link"></a></h3>
-<div class="codehilite"><pre>git co &lt;branch-mere&gt;
+<div class="highlight"><pre>git co &lt;branch-mere&gt;
 git pull
 git co &lt;branch-fille&gt;
 git update-from origin &lt;branch-mere&gt;
