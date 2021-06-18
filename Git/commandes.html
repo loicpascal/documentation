@@ -1117,6 +1117,10 @@ body .markdown-body
 <li><a href="#forcer-la-suppression-de-toutes-les-branches-de-suivi-locales-qui-ont-ete-supprimees-sur-le-distant">Forcer la suppression de toutes les branches de suivi locales qui ont été supprimées sur le distant</a></li>
 </ul>
 </li>
+<li><a href="#cas-pratiques">Cas pratiques</a><ul>
+<li><a href="#livrer-des-commits-de-la-branche-master-quand-la-branche-production-a-des-commits-davance">Livrer des commits de la branche master quand la branche production a des commits d&rsquo;avance</a></li>
+</ul>
+</li>
 </ul>
 <h2 id="gerer-un-depot">Gérer un dépôt<a class="headerlink" href="#gerer-un-depot" title="Permanent link"></a></h2>
 <h3 id="aide-en-ligne-de-commande">Aide en ligne de commande<a class="headerlink" href="#aide-en-ligne-de-commande" title="Permanent link"></a></h3>
@@ -1357,4 +1361,19 @@ git update-from origin &lt;branch-mere&gt;
 git push --force origin &lt;branch-fille&gt;
 </pre></div>
 
-<p>Si <code>git update-from origin &lt;branch-mere&gt;</code> ne fonctionne pas, utiliser la commande <code>git pull --rebase origin &lt;branch-mere&gt;</code></p></article></body></html>
+<p>Si <code>git update-from origin &lt;branch-mere&gt;</code> ne fonctionne pas, utiliser la commande <code>git pull --rebase origin &lt;branch-mere&gt;</code></p>
+<p><br/><br/></p>
+<h2 id="cas-pratiques">Cas pratiques<a class="headerlink" href="#cas-pratiques" title="Permanent link"></a></h2>
+<h3 id="livrer-des-commits-de-la-branche-master-quand-la-branche-production-a-des-commits-davance">Livrer des commits de la branche master quand la branche production a des commits d&rsquo;avance<a class="headerlink" href="#livrer-des-commits-de-la-branche-master-quand-la-branche-production-a-des-commits-davance" title="Permanent link"></a></h3>
+<p>Parfois, une merge request de la master vers la production peut poser problème si la production a des commits d&rsquo;avance (il nous est alors demander de rebaser).<br />
+Parfois aussi, un cherry-pick du commit qu&rsquo;on vient de merger sur la master vers la production est aussi bloqué.<br />
+Il faut alors traiter le problème en local.  </p>
+<ul>
+<li>Créer une branche depuis la branche de production</li>
+<li>Faire un cherry-pick du commit sur cette nouvelle branche</li>
+<li>Puis sur le dépôt, faire une MR classique de cette branche vers la branche production</li>
+</ul>
+<div class="highlight"><pre>git co -b &lt;branch-fille&gt; &lt;branch-mere&gt;
+git cherry-pick &lt;commit&gt;
+git push
+</pre></div></article></body></html>

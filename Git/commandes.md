@@ -40,6 +40,8 @@
 * [Commandes EOLAS](#commandes-eolas)
     * [Supprimer toutes les branches de suivi fusionnées qui ont été supprimées sur le distant](#supprimer-toutes-les-branches-de-suivi-fusionnees-qui-ont-ete-supprimees-sur-le-distant)
     * [Forcer la suppression de toutes les branches de suivi locales qui ont été supprimées sur le distant](#forcer-la-suppression-de-toutes-les-branches-de-suivi-locales-qui-ont-ete-supprimees-sur-le-distant)
+* [Cas pratiques](#cas-pratiques)
+    * [Livrer des commits de la branche master quand la branche production a des commits d'avance](#livrer-des-commits-de-la-branche-master-quand-la-branche-production-a-des-commits-davance)
 
 
 ##Gérer un dépôt
@@ -420,3 +422,24 @@ git push --force origin <branch-fille>
 ```
 
 Si `git update-from origin <branch-mere>` ne fonctionne pas, utiliser la commande `git pull --rebase origin <branch-mere>`
+
+
+<br/><br/>
+
+##Cas pratiques
+
+###Livrer des commits de la branche master quand la branche production a des commits d'avance
+
+Parfois, une merge request de la master vers la production peut poser problème si la production a des commits d'avance (il nous est alors demander de rebaser).  
+Parfois aussi, un cherry-pick du commit qu'on vient de merger sur la master vers la production est aussi bloqué.  
+Il faut alors traiter le problème en local.  
+
+* Créer une branche depuis la branche de production
+* Faire un cherry-pick du commit sur cette nouvelle branche
+* Puis sur le dépôt, faire une MR classique de cette branche vers la branche production
+
+```git
+git co -b <branch-fille> <branch-mere>
+git cherry-pick <commit>
+git push
+```
